@@ -22,24 +22,31 @@ function App() {
       <ScrollToHash />
       <Container>
         <Routes>
-          <Route path="/home" element={
+          <Route path="/mortgage-app" element={
             <>
+              <Navbar />
+              <Header />
+              <Next />
+              <About />
+              <Footer />
              
           } />
-          <Route path="/resume" element={
-            <>
-              <Resume />
-            </>
-          } />
-        </Routes>
-      </Container>
-    </Router>
-  );
+              <Route path="/resume" element={
+                <>
+                  <Resume />
+                </>
+              } />
+            </Routes>
+          </Container>
+        </Router>
+        );
 }
 
-function ScrollToHash() {
-  useScrollToHash();
-  return null;
+        function ScrollToHash() {
+          useScrollToHash();
+        return null;
 }
 
-export default App;
+        export default App;
+
+        const Container = styled.div``;
