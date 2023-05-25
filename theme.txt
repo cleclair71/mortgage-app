@@ -1,0 +1,5 @@
+header: #d4d9d4
+text-color - #454a44
+background white -#454a44
+background beige - #eaece9
+background dark - #d8ddd7
