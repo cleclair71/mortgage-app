@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <Container bar={bar}>
             <Logo>
-                <h1><Link to="/">Cassie Leclair</Link></h1>
+                <h1><Link to="/">LOGO</Link></h1>
             </Logo>
             <Nav bar={bar}>
                 <span><Link to="/mortgages">Mortgages</Link></span>
@@ -85,29 +85,18 @@ const Logo = styled.div`
     gap: 0.5rem;
     span {
         font-size: 2rem;
-        opacity: .6;
         }
-        a {
-            font-size: 1.8rem;
-            font-weight: 100;
-            font-family: 'Just Me Again Down Here', cursive;
-            color: var(--white);
-            text-decoration: none;
-            transition: all 400ms ease-in-out;
-            opacity: .6;
-            :hover {
-                opacity: 1;
-
-            }
-        }`;
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 200;
+            text-transform: uppercase;`
 
 const Nav = styled.div`
 @media (max-width: 640px) {
     position: fixed;
     display: flex;
     flex-direction: column;
-    backdrop-filter: blur(20px);
-    background: rgba(255,255,255,0.3);
+    background-color: var(--background);
     inset: 0;
     justify-content: center;
     align-items: center;
@@ -121,10 +110,9 @@ const Nav = styled.div`
 span {
     margin-left: 1rem;
     a {
-        color: var(--white);
+        color: var(--text);
         text-decoration: none;
-        font-family: 'Just Me Again Down Here', cursive;
-        font-size: 1.8rem;
+        font-size: 1.4rem;
         position: relative;
         font-weight: 300;
         :before {
@@ -134,7 +122,7 @@ span {
             right: 0;
             bottom: -2px;
             height: 2px;
-            background-color: var(--white);
+            background-color: var(--text);
             transform: scaleX(0);
             transform-origin: right;
             transition: transform 400ms ease-in-out;

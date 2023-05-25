@@ -1,3 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Montserrat:wght@200&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+  
+}
+
 body {
-  background-color: white
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+  background-color: var(--white);
+}
+
+:root{
+  --text: #454a44;
+  --darkb: #d8ddd7;
+  --white: #fdfdfd;
+  --beige: #eaece9;
+  --header: #d4d9d4;
+  
+}
+
+@keyframes header {
+  0%{
+    transform: translateY(-30px);
+    opacity: 0;
+  } 
+  100%{
+    transform: translateY(0);
+      opacity: 1;
+  }
 }

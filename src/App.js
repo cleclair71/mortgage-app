@@ -1,9 +1,9 @@
-import logo from './logo.svg';
+import HeaderImage from './assets/pexels-eberhard-grossgasteiger-4406337c.jpg';
 import './App.css';
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import styled from "styled-components";
-
+import BannerContent from './components/Main/Banner';
 import Header from './components/Main/Header';
 import NextSteps from './components/Main/NextSteps';
 import About from './components/Main/About';
@@ -30,18 +30,18 @@ function App() {
         <Routes>
           <Route path="/" element={
             <>
-              <Banner >
+              <Banner>
                 <Header />
-                </Banner>
-                <NextSteps />
-                <About />
-                <Footer />
-              </>
+                <BannerContent />
+              </Banner>
+              <NextSteps />
+              <About />
+              <Footer />
+            </>
           } />
-
-            </Routes>
-          </Container>
-        </Router>
+        </Routes>
+      </Container>
+    </Router>
         );
 }
 
@@ -54,9 +54,10 @@ function App() {
 
         const Container = styled.div``;
         const Banner = styled.div`
-        background: url('/assets/field.png');
+        background: url(${HeaderImage});
         background-size: cover;
         background-position: center;
+        margin: 1rem;
         height: 100vh;
         @media (max-width: 640px) {
           height: 100%;
