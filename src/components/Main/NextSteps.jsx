@@ -13,7 +13,7 @@ const NextSteps = () => {
     <Container>
       <Title>
         <h1>Next Steps</h1>
-        <StyledLine />
+        <BannerLine />
       </Title>
       <CardsContainer>
         {steps.map((step, index) => (
@@ -34,16 +34,18 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 1.5rem 0;
+  background-color: var(--beige);
+  height: 80vh;
 `;
 
 const Title = styled.div`
   h1 {
     font-size: 2.5rem;
-    color: var(--white);
+    color: var(--text);
     text-decoration: none;
     transition: all 400ms ease-in-out;
     opacity: .6;
@@ -53,10 +55,12 @@ const Title = styled.div`
   }
 `;
 
-const StyledLine = styled.hr`
-  margin-top: 1rem;
-  width: 100%;
-  border: 1px solid var(--white);
+const BannerLine = styled.hr`
+  width: 15%;
+  border: 1px solid var(--text);
+  margin: 0 auto;
+  margin-top: 30px;
+    margin-bottom: 30px;
 `;
 
 const CardsContainer = styled.div`
@@ -73,9 +77,10 @@ const Card = styled.div`
   background: var(--white);
   padding: 20px;
   margin: 20px;
-  border-radius: 10px;
+  border-radius: 1px;
   width: 20%;
   min-width: 200px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
   h3 {
     margin-bottom: 10px;
   }

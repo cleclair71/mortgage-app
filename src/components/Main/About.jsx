@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { TfiFacebook, TfiLinkedin } from 'react-icons/tfi';
 
 const About = () => {
@@ -31,15 +30,17 @@ export default About;
 
 const Container = styled.div`
   display: flex;
+  
   justify-content: center;
   align-items: center;
   width: 80%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 1.5rem 0;
-  @media(max-width: 840px){
-    width: 90%;
-  }
+  height: 100vh;
+        @media (max-width: 640px) {
+          height: 100%;
+        padding-bottom: 2rem;
 `;
 
 const ImageWrapper = styled.div`

@@ -1,4 +1,4 @@
-import HeaderImage from './assets/pexels-eberhard-grossgasteiger-4406337c.jpg';
+import HeaderImage from './assets/ficus.png';
 import './App.css';
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
