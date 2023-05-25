@@ -4,6 +4,11 @@ import { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import styled from "styled-components";
 
+import Header from './components/Main/Header';
+import NextSteps from './components/Main/NextSteps';
+import About from './components/Main/About';
+import Footer from './components/Partials/footer/Footer';
+
 // scroll to hash
 function useScrollToHash() {
   const { hash } = useLocation();
@@ -16,26 +21,24 @@ function useScrollToHash() {
     }, 0);
   }, [hash]);
 }
+
 function App() {
   return (
     <Router>
       <ScrollToHash />
       <Container>
         <Routes>
-          <Route path="/mortgage-app" element={
+          <Route path="/" element={
             <>
-              <Navbar />
-              <Header />
-              <Next />
-              <About />
-              <Footer />
-             
+              <Banner >
+                <Header />
+                </Banner>
+                <NextSteps />
+                <About />
+                <Footer />
+              </>
           } />
-              <Route path="/resume" element={
-                <>
-                  <Resume />
-                </>
-              } />
+
             </Routes>
           </Container>
         </Router>
@@ -50,3 +53,13 @@ function App() {
         export default App;
 
         const Container = styled.div``;
+        const Banner = styled.div`
+        background: url('/assets/field.png');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        @media (max-width: 640px) {
+          height: 100%;
+        padding-bottom: 2rem;
+}
+        `;     
