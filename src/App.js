@@ -3,11 +3,7 @@ import './App.css';
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import styled from "styled-components";
-import BannerContent from './components/Main/Banner';
-import Header from './components/Main/Header';
-import NextSteps from './components/Main/NextSteps';
-import About from './components/Main/About';
-import Footer from './components/Partials/footer/Footer';
+import MainPage from './components/Main/App';
 
 // scroll to hash
 function useScrollToHash() {
@@ -30,13 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={
             <>
-              <Banner>
-                <Header />
-                <BannerContent />
-              </Banner>
-              <NextSteps />
-              <About />
-              <Footer />
+              <MainPage />
             </>
           } />
         </Routes>
@@ -53,14 +43,4 @@ function App() {
         export default App;
 
         const Container = styled.div``;
-        const Banner = styled.div`
-        background: url(${HeaderImage});
-        background-size: cover;
-        background-position: center;
-        margin: 1rem;
-        height: 100vh;
-        @media (max-width: 640px) {
-          height: 100%;
-        padding-bottom: 2rem;
-}
-        `;     
+           
