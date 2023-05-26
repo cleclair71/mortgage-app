@@ -3,3 +3,29 @@ text-color - #454a44
 background white -#454a44
 background beige - #eaece9
 background dark - #d8ddd7
+
+|-- Mortgages
+|   |-- Home Purchase
+|   |-- Refinance
+|   |-- Renewal
+|   |-- Second Mortgage
+|   |-- Commercial Mortgage
+|   |-- Debt Consolidation
+|   |-- Home Equity Mortgage
+|   |-- Private Mortgage
+|-- Calculators
+|   |-- Affordability Calculator
+|   |-- Payment Calculator
+|   |-- CMHC Calculator
+|   |-- Land Transfer Tax Calculator
+|   |-- Renewal Calculator 
+|-- Rates
+|-- About
+|   |-- About Us
+|   |-- Contact Us
+|   |-- Mortgage Professionals
+|-- Resources
+|   |-- FAQ
+|   |-- Glossary
+|   |-- Why use us?
+|-- Apply Now

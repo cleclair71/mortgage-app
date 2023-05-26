@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Button from '../Partials/Button';
 
 const NextSteps = () => {
   const steps = [
@@ -20,7 +21,7 @@ const NextSteps = () => {
           <Card key={index}>
             <h3>{step.title}</h3>
             <p>{step.description}</p>
-            <StyledButton>Go</StyledButton>
+            <Button onClick={() => console.log("Button 2 clicked!")}>Go</Button>
           </Card>
         ))}
       </CardsContainer>
@@ -35,7 +36,6 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 1280px;
   margin: 0 auto;
   padding: 1.5rem 0;
   background-color: var(--beige);
@@ -44,6 +44,7 @@ const Container = styled.div`
 
 const Title = styled.div`
   h1 {
+    margin-top: 40px;
     font-size: 2.5rem;
     color: var(--text);
     text-decoration: none;

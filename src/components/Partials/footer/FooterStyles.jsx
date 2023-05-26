@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const FooterContainer = styled.div`
   padding: 80px 60px;
-  background: radial-gradient(circle, rgba(92,39,251,1) 0%, rgba(112,71,247,1) 100%);
+  background: radial-gradient(circle, rgba(234, 236, 233) 0%, rgba(216, 221, 215) 100%);
 
   @media (max-width: 1000px) {
     padding: 70px 30px;
@@ -35,7 +35,7 @@ export const Row = styled.div`
 `;
 
 export const FooterLink = styled.a`
-  color: #fff;
+  color: var(--text);
   margin-bottom: 20px;
   font-size: 18px;
   text-decoration: none;
@@ -48,7 +48,7 @@ export const FooterLink = styled.a`
 
 export const Title = styled.p`
   font-size: 24px;
-  color: #fff;
+  color: var(--text);
   margin-bottom: 40px;
   font-weight: bold;
 `;

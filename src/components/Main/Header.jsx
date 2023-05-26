@@ -1,20 +1,67 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import Button from '../Partials/Button';
+import { FiChevronDown } from 'react-icons/fi';
 
 const Header = () => {
     const [bar, setBar] = useState(false);
+    const [activeDropdown, setActiveDropdown] = useState(null);
     return (
         <Container bar={bar}>
             <Logo>
                 <h1><Link to="/">LOGO</Link></h1>
             </Logo>
             <Nav bar={bar}>
-                <span><Link to="/mortgages">Mortgages</Link></span>
-                <span><Link to="/calculators">Calculators</Link></span>
-                <span><Link to="/rates">Rates</Link></span>
-                <span><Link to="/about">About</Link></span>
-                <span><Link to="/apply">Apply Now</Link></span>
+                <NavItem onMouseEnter={() => setActiveDropdown('mortgages')} onMouseLeave={() => setActiveDropdown(null)}>
+                    <Link to="/mortgages">Mortgages<StyledChevron/></Link>
+                    {activeDropdown === 'mortgages' && (
+                        <Dropdown>
+                            <DropdownLink to="/home-purchase">Home Purchase</DropdownLink>
+                            <DropdownLink to="/refinance">Refinance</DropdownLink>
+                            <DropdownLink to="/renewal">Renewal</DropdownLink>
+                            <DropdownLink to="/second-mortgage">Second Mortgage</DropdownLink>
+                            <DropdownLink to="/commercial-mortgage">Commercial Mortgage</DropdownLink>
+                            <DropdownLink to="/debt-consolidation">Debt Consolidation</DropdownLink>
+                            <DropdownLink to="/home-equity-mortgage">Home Equity Mortgage</DropdownLink>
+                            <DropdownLink to="/private-mortgage">Private Mortgage</DropdownLink>
+                        </Dropdown>
+                    )}
+                </NavItem>
+                <NavItem onMouseEnter={() => setActiveDropdown('calculators')} onMouseLeave={() => setActiveDropdown(null)}>
+                    <Link to="/calculators">Calculators<StyledChevron/></Link>
+                    {activeDropdown === 'calculators' && (
+                        <Dropdown>
+                            <DropdownLink to="/affordability-calculator">Affordability Calculator</DropdownLink>
+                            <DropdownLink to="/payment-calculator">Payment Calculator</DropdownLink>
+                            <DropdownLink to="/cmhc-calculator">CMHC Calculator</DropdownLink>
+                            <DropdownLink to="/land-transfer-tax-calculator">Land Transfer Tax Calculator</DropdownLink>
+                            <DropdownLink to="/renewal-calculator">Renewal Calculator</DropdownLink>
+                        </Dropdown>
+                    )}
+                </NavItem>
+                <NavItem><Link to="/rates">Rates</Link></NavItem>
+                <NavItem onMouseEnter={() => setActiveDropdown('about')} onMouseLeave={() => setActiveDropdown(null)}>
+                    <Link to="/about">About<StyledChevron/></Link>
+                    {activeDropdown === 'about' && (
+                        <Dropdown>
+                            <DropdownLink to="/about-us">About Us</DropdownLink>
+                            <DropdownLink to="/contact-us">Contact Us</DropdownLink>
+                            <DropdownLink to="/mortgage-professionals">Mortgage Professionals</DropdownLink>
+                        </Dropdown>
+                    )}
+                </NavItem>
+                <NavItem onMouseEnter={() => setActiveDropdown('resources')} onMouseLeave={() => setActiveDropdown(null)}>
+                    <Link to="/resources">Resources<StyledChevron/></Link>
+                    {activeDropdown === 'resources' && (
+                        <Dropdown>
+                            <DropdownLink to="/faq">FAQ</DropdownLink>
+                            <DropdownLink to="/glossary">Glossary</DropdownLink>
+                            <DropdownLink to="/why-use-us">Why use us?</DropdownLink>
+                        </Dropdown>
+                    )}
+                </NavItem>
+                <span><Button onClick={() => console.log("Button 2 clicked!")}>Apply now</Button></span>
             </Nav>
             <div onClick={() => setBar(!bar)} className="bars">
                 <div className="bar"></div>
@@ -29,90 +76,133 @@ const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
-    max-width: 1280px;
+    width: 90%;
     margin: 0 auto;
     padding: 1.5rem 0;
     position: relative;
     animation: header 500ms ease-in-out;
+
     @media(max-width: 840px){
         width: 90%;
     }
+
     .bars{
         display: none;
-    }
         @media (max-width: 640px) {
-            .bars{
-                width: 40px;
-                height: 40px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                position: relative;
-                z-index: 100;
-                padding: 0.5rem;
-                .bar {
-                    position: absolute;
-                    width: 100%;
-                    height: 2px;
-                    background-color: ${props => props.bar ? "transparent" : "var(--white)"};
-                    transition: background-color 400ms ease-in-out;
-                    :before, :after {
-                        content: "";
-                        height: 2px;
-                        width: 100%;
-                        background-color: var(--white);
-                        position: absolute;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 100;
+            padding: 0.5rem;
 
-                    }
-                
-                    :before{
-                        transform: ${props => props.bar ? "rotate(45deg)" : "translateY(10px)"};
-                        transition: all 400ms ease-in-out;
-                    }
-    
-                    :after{
-                        transform: ${props => props.bar ? "rotate(-45deg)" : "translateY(-10px)"};
-                        transition: all 400ms ease-in-out;
-                    }
+            .bar {
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background-color: ${props => props.bar ? "transparent" : "var(--white)"};
+                transition: background-color 400ms ease-in-out;
+                :before, :after {
+                    content: "";
+                    height: 2px;
+                    width: 100%;
+                    background-color: var(--white);
+                    position: absolute;
+                }
+                :before{
+                    transform: ${props => props.bar ? "rotate(45deg)" : "translateY(10px)"};
+                    transition: all 400ms ease-in-out;
+                }
+                :after{
+                    transform: ${props => props.bar ? "rotate(-45deg)" : "translateY(-10px)"};
+                    transition: all 400ms ease-in-out;
                 }
             }
         }
-    `
+    }
+`
+
+const Dropdown = styled.div`
+    display: none;
+    position: absolute;
+    background-color: var(--background);
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 999;
+    width: 200px;
+    top: 40px; /* adjust this as needed */
+
+    @media(max-width: 640px) {
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+    }
+`;
+
+const DropdownLink = styled(Link)`
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 1rem;
+    :hover {
+        opacity: 0.8;
+    }
+`;
+
 const Logo = styled.div`
     display: flex;
     align-items: center;
     gap: 0.5rem;
     span {
         font-size: 2rem;
-        }
-        h1 {
-            font-size: 1.5rem;
-            font-weight: 200;
-            text-transform: uppercase;`
+    }
+    h1 {
+        font-size: 1.5rem;
+        font-weight: 200;
+        text-transform: uppercase;
+    }
+`
 
 const Nav = styled.div`
-@media (max-width: 640px) {
-    position: fixed;
     display: flex;
-    flex-direction: column;
-    background-color: var(--background);
-    inset: 0;
-    justify-content: center;
     align-items: center;
-    gap: 2rem;
-    font-weight: 700;
-    height: ${props => props.bar ? "100vh" : 0};
-    z-index: 100;
-    overflow: hidden;
-    transition: height 400ms ease-in-out;
-}
-span {
+
+    @media (max-width: 640px) {
+        position: fixed;
+        flex-direction: column;
+        background-color: var(--white);
+        inset: 0;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        font-weight: 700;
+        height: ${props => props.bar ? "100vh" : 0};
+        z-index: 100;
+        overflow: hidden;
+        transition: height 400ms ease-in-out;
+    }
+`;
+
+const NavItem = styled.span`
+    position: relative;
     margin-left: 1rem;
+
+    &:hover ${Dropdown} {
+        display: block;
+        background-color: var(--white);
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+    }
+
     a {
         color: var(--text);
         text-decoration: none;
-        font-size: 1.4rem;
+        font-size: 1.1rem;
+        padding: 0.5rem;
         position: relative;
         font-weight: 300;
         :before {
@@ -126,13 +216,21 @@ span {
             transform: scaleX(0);
             transform-origin: right;
             transition: transform 400ms ease-in-out;
-            }
-            :hover:before {
-                transform: scaleX(1);
-                transform-origin: left;
-                }
-                :hover {
-                    opacity: 0.8;
-                    }
-                    }
-                    };`
+        }
+        :hover:before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        :hover {
+            opacity: 0.8;
+        }
+    }
+`;
+
+const StyledChevron = styled(FiChevronDown)`
+    color: var(--text);
+    vertical-align: middle;
+    opacity: 0.8;
+    padding-left: 0.2rem;
+    font-size: 0.9em; /* adjust this value as needed */
+`;
