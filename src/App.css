@@ -17,7 +17,7 @@ body {
 }
 
 :root{
-  --text: #454a44;
+  --text: rgb(69, 74, 68);
   --darkb: rgb(216, 221, 215);
   --white: rgb(253, 253, 253);
   --beige: rgb(234, 236, 233);

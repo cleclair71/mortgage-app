@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Button from '../Partials/Button';
@@ -7,16 +7,27 @@ import { FiChevronDown } from 'react-icons/fi';
 const Header = () => {
     const [bar, setBar] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
+    const timeoutId = useRef(null);
+
+    const handleMouseEnter = (name) => {
+        clearTimeout(timeoutId.current);
+        setActiveDropdown(name);
+    };
+    
+    const handleMouseLeave = () => {
+        timeoutId.current = setTimeout(() => setActiveDropdown(null), 300); // decrease the delay to 300ms
+    };
+
     return (
         <Container bar={bar}>
             <Logo>
                 <h1><Link to="/">LOGO</Link></h1>
             </Logo>
             <Nav bar={bar}>
-                <NavItem onMouseEnter={() => setActiveDropdown('mortgages')} onMouseLeave={() => setActiveDropdown(null)}>
+                <NavItem onMouseEnter={() => handleMouseEnter('mortgages')} onMouseLeave={handleMouseLeave}>
                     <Link to="/mortgages">Mortgages<StyledChevron/></Link>
                     {activeDropdown === 'mortgages' && (
-                        <Dropdown>
+                        <Dropdown onMouseEnter={() => clearTimeout(timeoutId.current)} onMouseLeave={() => setActiveDropdown(null)}>
                             <DropdownLink to="/home-purchase">Home Purchase</DropdownLink>
                             <DropdownLink to="/refinance">Refinance</DropdownLink>
                             <DropdownLink to="/renewal">Renewal</DropdownLink>
@@ -28,10 +39,10 @@ const Header = () => {
                         </Dropdown>
                     )}
                 </NavItem>
-                <NavItem onMouseEnter={() => setActiveDropdown('calculators')} onMouseLeave={() => setActiveDropdown(null)}>
+                <NavItem onMouseEnter={() => handleMouseEnter('calculators')} onMouseLeave={handleMouseLeave}>
                     <Link to="/calculators">Calculators<StyledChevron/></Link>
                     {activeDropdown === 'calculators' && (
-                        <Dropdown>
+                        <Dropdown onMouseEnter={() => clearTimeout(timeoutId.current)} onMouseLeave={() => setActiveDropdown(null)}>
                             <DropdownLink to="/affordability-calculator">Affordability Calculator</DropdownLink>
                             <DropdownLink to="/payment-calculator">Payment Calculator</DropdownLink>
                             <DropdownLink to="/cmhc-calculator">CMHC Calculator</DropdownLink>
@@ -41,27 +52,33 @@ const Header = () => {
                     )}
                 </NavItem>
                 <NavItem><Link to="/rates">Rates</Link></NavItem>
-                <NavItem onMouseEnter={() => setActiveDropdown('about')} onMouseLeave={() => setActiveDropdown(null)}>
+                <NavItem onMouseEnter={() => handleMouseEnter('about')} onMouseLeave={handleMouseLeave}>
                     <Link to="/about">About<StyledChevron/></Link>
                     {activeDropdown === 'about' && (
-                        <Dropdown>
+                        <Dropdown onMouseEnter={() => clearTimeout(timeoutId.current)} onMouseLeave={() => setActiveDropdown(null)}>
                             <DropdownLink to="/about-us">About Us</DropdownLink>
                             <DropdownLink to="/contact-us">Contact Us</DropdownLink>
                             <DropdownLink to="/mortgage-professionals">Mortgage Professionals</DropdownLink>
                         </Dropdown>
                     )}
                 </NavItem>
-                <NavItem onMouseEnter={() => setActiveDropdown('resources')} onMouseLeave={() => setActiveDropdown(null)}>
+                <NavItem onMouseEnter={() => handleMouseEnter('resources')} onMouseLeave={handleMouseLeave}>
                     <Link to="/resources">Resources<StyledChevron/></Link>
                     {activeDropdown === 'resources' && (
-                        <Dropdown>
+                        <Dropdown onMouseEnter={() => clearTimeout(timeoutId.current)} onMouseLeave={() => setActiveDropdown(null)}>
                             <DropdownLink to="/faq">FAQ</DropdownLink>
                             <DropdownLink to="/glossary">Glossary</DropdownLink>
                             <DropdownLink to="/why-use-us">Why use us?</DropdownLink>
                         </Dropdown>
                     )}
                 </NavItem>
-                <span><Button onClick={() => console.log("Button 2 clicked!")}>Apply now</Button></span>
+                <NavItem>
+  <span>
+    <StyledButton onClick={() => console.log("Button 2 clicked!")}>
+      Apply now
+    </StyledButton>
+  </span>
+</NavItem>
             </Nav>
             <div onClick={() => setBar(!bar)} className="bars">
                 <div className="bar"></div>
@@ -133,7 +150,9 @@ const Dropdown = styled.div`
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 999;
     width: 200px;
-    top: 40px; /* adjust this as needed */
+    top: 40px; 
+    opacity: 0; // start invisible
+    transition: opacity 0.3s ease-in-out; 
 
     @media(max-width: 640px) {
         position: static;
@@ -149,7 +168,7 @@ const DropdownLink = styled(Link)`
     display: block;
     margin-bottom: 1rem;
     :hover {
-        opacity: 0.8;
+        font-weight: bolder !important;; 
     }
 `;
 
@@ -190,12 +209,13 @@ const Nav = styled.div`
 const NavItem = styled.span`
     position: relative;
     margin-left: 1rem;
+    align-items: center;
 
     &:hover ${Dropdown} {
         display: block;
         background-color: var(--white);
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-
+        opacity: 1;
     }
 
     a {
@@ -220,9 +240,11 @@ const NavItem = styled.span`
         :hover:before {
             transform: scaleX(1);
             transform-origin: left;
+            transition: transform 400ms ease-in-out;
         }
         :hover {
-            opacity: 0.8;
+            font-weight: bolder;
+            transition: transform 400ms ease-in-out;
         }
     }
 `;
@@ -234,3 +256,12 @@ const StyledChevron = styled(FiChevronDown)`
     padding-left: 0.2rem;
     font-size: 0.9em; /* adjust this value as needed */
 `;
+
+const StyledButton = styled(Button)`
+  font-size: 0.7em;
+  padding: 10px 20px;
+  margin: 0;
+`;
+
+
+
