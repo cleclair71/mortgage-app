@@ -10,8 +10,12 @@ export const useHeader = () => {
         setActiveDropdown(name);
     };
 
-    const handleMouseLeave = () => {
-        timeoutId.current = setTimeout(() => setActiveDropdown(null), 300);
+    const handleMouseLeave = (name) => {
+        timeoutId.current = setTimeout(() => {
+            if (activeDropdown === name) { // clear the timeout only if the active dropdown is still the same
+                setActiveDropdown(null);
+            }
+        }, 500);
     };
 
     return {

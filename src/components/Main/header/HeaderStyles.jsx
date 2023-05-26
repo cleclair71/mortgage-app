@@ -56,7 +56,8 @@ export const Container = styled.div`
 `
 
 export const Dropdown = styled.div`
-    display: none;
+    display: none; // initially set to none
+    flex-direction: column; // add this line to stack items vertically
     position: absolute;
     background-color: var(--background);
     padding: 1rem;
@@ -64,14 +65,16 @@ export const Dropdown = styled.div`
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 999;
     width: 200px;
-    top: 40px; 
+    top: 40px;
     opacity: 0; // start invisible
-    transition: opacity 0.3s ease-in-out; 
+   
 
     @media(max-width: 640px) {
         position: static;
         background-color: transparent;
         box-shadow: none;
+        display: flex; // ensure it's visible on mobile
+        flex-direction: column; // add this line to stack items vertically on mobile
     }
 `;
 
@@ -126,7 +129,7 @@ export const NavItem = styled.span`
     align-items: center;
 
     &:hover ${Dropdown} {
-        display: block;
+        display: flex;
         background-color: var(--white);
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         opacity: 1;

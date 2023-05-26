@@ -24,7 +24,8 @@ const Header = () => {
                 <h1><Link to="/">LOGO</Link></h1>
             </Logo>
             <Nav bar={bar}>
-                <NavItem onMouseEnter={() => handleMouseEnter('mortgages')} onMouseLeave={handleMouseLeave}>
+                <NavItem onMouseEnter={() => handleMouseEnter('mortgages')} 
+  onMouseLeave={() => handleMouseLeave('mortgages')}>
                     <Link to="/mortgages">Mortgages<StyledChevron/></Link>
                     {activeDropdown === 'mortgages' && (
                         <Dropdown onMouseEnter={() => clearTimeout(timeoutId.current)} onMouseLeave={() => setActiveDropdown(null)}>
@@ -39,7 +40,8 @@ const Header = () => {
                         </Dropdown>
                     )}
                 </NavItem>
-                <NavItem onMouseEnter={() => handleMouseEnter('calculators')} onMouseLeave={handleMouseLeave}>
+                <NavItem onMouseEnter={() => handleMouseEnter('calculators')} 
+  onMouseLeave={() => handleMouseLeave('calculators')}>
                     <Link to="/calculators">Calculators<StyledChevron/></Link>
                     {activeDropdown === 'calculators' && (
                         <Dropdown onMouseEnter={() => clearTimeout(timeoutId.current)} onMouseLeave={() => setActiveDropdown(null)}>
@@ -52,7 +54,8 @@ const Header = () => {
                     )}
                 </NavItem>
                 <NavItem><Link to="/rates">Rates</Link></NavItem>
-                <NavItem onMouseEnter={() => handleMouseEnter('about')} onMouseLeave={handleMouseLeave}>
+                <NavItem onMouseEnter={() => handleMouseEnter('about')} 
+  onMouseLeave={() => handleMouseLeave('about')}>
                     <Link to="/about">About<StyledChevron/></Link>
                     {activeDropdown === 'about' && (
                         <Dropdown onMouseEnter={() => clearTimeout(timeoutId.current)} onMouseLeave={() => setActiveDropdown(null)}>
@@ -62,7 +65,8 @@ const Header = () => {
                         </Dropdown>
                     )}
                 </NavItem>
-                <NavItem onMouseEnter={() => handleMouseEnter('resources')} onMouseLeave={handleMouseLeave}>
+                <NavItem onMouseEnter={() => handleMouseEnter('resources')} 
+  onMouseLeave={() => handleMouseLeave('resources')}>
                     <Link to="/resources">Resources<StyledChevron/></Link>
                     {activeDropdown === 'resources' && (
                         <Dropdown onMouseEnter={() => clearTimeout(timeoutId.current)} onMouseLeave={() => setActiveDropdown(null)}>
