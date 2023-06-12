@@ -1,18 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useHeader } from './HeaderHooks';
-import { 
-  Container, Dropdown, DropdownLink, Logo, Nav, 
-  NavItem, StyledChevron, StyledButton 
+import {
+    Container, Dropdown, DropdownLink, Logo, Nav,
+    NavItem, StyledChevron, StyledButton
 } from './HeaderStyles';
 
 const Header = () => {
-    const { 
-        bar, 
-        setBar, 
-        activeDropdown, 
-        setActiveDropdown, 
-        handleMouseEnter, 
+    const {
+        bar,
+        setBar,
+        activeDropdown,
+        setActiveDropdown,
+        handleMouseEnter,
         handleMouseLeave,
         timeoutId, // destructure timeoutId here
     } = useHeader();
@@ -24,9 +24,9 @@ const Header = () => {
                 <h1><Link to="/">LOGO</Link></h1>
             </Logo>
             <Nav bar={bar}>
-                <NavItem onMouseEnter={() => handleMouseEnter('mortgages')} 
-  onMouseLeave={() => handleMouseLeave('mortgages')}>
-                    <Link to="/mortgages">Mortgages<StyledChevron/></Link>
+                <NavItem onMouseEnter={() => handleMouseEnter('mortgages')}
+                    onMouseLeave={() => handleMouseLeave('mortgages')}>
+                    <Link to="/mortgages">Mortgages<StyledChevron /></Link>
                     {activeDropdown === 'mortgages' && (
                         <Dropdown onMouseEnter={() => clearTimeout(timeoutId.current)} onMouseLeave={() => setActiveDropdown(null)}>
                             <DropdownLink to="/home-purchase">Home Purchase</DropdownLink>
@@ -40,9 +40,9 @@ const Header = () => {
                         </Dropdown>
                     )}
                 </NavItem>
-                <NavItem onMouseEnter={() => handleMouseEnter('calculators')} 
-  onMouseLeave={() => handleMouseLeave('calculators')}>
-                    <Link to="/calculators">Calculators<StyledChevron/></Link>
+                <NavItem onMouseEnter={() => handleMouseEnter('calculators')}
+                    onMouseLeave={() => handleMouseLeave('calculators')}>
+                    <Link to="/calculators">Calculators<StyledChevron /></Link>
                     {activeDropdown === 'calculators' && (
                         <Dropdown onMouseEnter={() => clearTimeout(timeoutId.current)} onMouseLeave={() => setActiveDropdown(null)}>
                             <DropdownLink to="/affordability">Affordability Calculator</DropdownLink>
@@ -54,9 +54,9 @@ const Header = () => {
                     )}
                 </NavItem>
                 <NavItem><Link to="/rates">Rates</Link></NavItem>
-                <NavItem onMouseEnter={() => handleMouseEnter('about')} 
-  onMouseLeave={() => handleMouseLeave('about')}>
-                    <Link to="/about">About<StyledChevron/></Link>
+                <NavItem onMouseEnter={() => handleMouseEnter('about')}
+                    onMouseLeave={() => handleMouseLeave('about')}>
+                    <Link to="/about">About<StyledChevron /></Link>
                     {activeDropdown === 'about' && (
                         <Dropdown onMouseEnter={() => clearTimeout(timeoutId.current)} onMouseLeave={() => setActiveDropdown(null)}>
                             <DropdownLink to="/about-us">About Us</DropdownLink>
@@ -65,9 +65,9 @@ const Header = () => {
                         </Dropdown>
                     )}
                 </NavItem>
-                <NavItem onMouseEnter={() => handleMouseEnter('resources')} 
-  onMouseLeave={() => handleMouseLeave('resources')}>
-                    <Link to="/resources">Resources<StyledChevron/></Link>
+                <NavItem onMouseEnter={() => handleMouseEnter('resources')}
+                    onMouseLeave={() => handleMouseLeave('resources')}>
+                    <Link to="/resources">Resources<StyledChevron /></Link>
                     {activeDropdown === 'resources' && (
                         <Dropdown onMouseEnter={() => clearTimeout(timeoutId.current)} onMouseLeave={() => setActiveDropdown(null)}>
                             <DropdownLink to="/faq">FAQ</DropdownLink>
@@ -77,12 +77,12 @@ const Header = () => {
                     )}
                 </NavItem>
                 <NavItem>
-  <span>
-    <StyledButton onClick={() => console.log("Button 2 clicked!")}>
-      Apply now
-    </StyledButton>
-  </span>
-</NavItem>
+                    <span>
+                        <StyledButton onClick={() => console.log("Button 2 clicked!")}>
+                            Apply now
+                        </StyledButton>
+                    </span>
+                </NavItem>
             </Nav>
             <div onClick={() => setBar(!bar)} className="bars">
                 <div className="bar"></div>

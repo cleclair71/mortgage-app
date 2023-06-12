@@ -9,7 +9,7 @@ const BannerContent = () => {
     <BannerWrapper>
         <Slide direction="left">
       <BannerTitle>Affordability Calculator</BannerTitle>
-      <BannerSubTitle>SubTitle</BannerSubTitle>
+
       <BannerLine />
 
       </Slide>
@@ -25,6 +25,15 @@ const BannerWrapper = styled.div`
   padding-top: 20vh; 
 `;
 
+const StyledLine = styled.hr`
+  
+  width: 15%;
+  border: 1px solid var(--white);
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+`;
+
 const BannerTitle = styled.h1`
   color: var(--white);
   text-transform: uppercase;
@@ -38,7 +47,7 @@ const BannerSubTitle = styled.h2`
 
 const BannerLine = styled.hr`
   width: 5%;
-  border: 1px solid var(--text);
+  border: 1px solid var(--white);
   margin: 0 auto;
   margin-top: 30px;
 `;
