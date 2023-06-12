@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import styled from "styled-components";
 import MainPage from './components/Main/App';
+import Affordability from './components/Calculators/affordability/App.jsx';
 
 // scroll to hash
 function useScrollToHash() {
@@ -29,6 +30,7 @@ function App() {
               <MainPage />
             </>
           } />
+          <Route path="/affordability" element={<Affordability />} />
         </Routes>
       </Container>
     </Router>

@@ -45,10 +45,10 @@ const Header = () => {
                     <Link to="/calculators">Calculators<StyledChevron/></Link>
                     {activeDropdown === 'calculators' && (
                         <Dropdown onMouseEnter={() => clearTimeout(timeoutId.current)} onMouseLeave={() => setActiveDropdown(null)}>
-                            <DropdownLink to="/affordability-calculator">Affordability Calculator</DropdownLink>
+                            <DropdownLink to="/affordability">Affordability Calculator</DropdownLink>
                             <DropdownLink to="/payment-calculator">Payment Calculator</DropdownLink>
                             <DropdownLink to="/cmhc-calculator">CMHC Calculator</DropdownLink>
-                            <DropdownLink to="/land-transfer-tax-calculator">Land Transfer Tax Calculator</DropdownLink>
+                            <DropdownLink to="/land-transfer">Land Transfer Tax Calculator</DropdownLink>
                             <DropdownLink to="/renewal-calculator">Renewal Calculator</DropdownLink>
                         </Dropdown>
                     )}
