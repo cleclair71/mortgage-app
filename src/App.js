@@ -5,6 +5,10 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-route
 import styled from "styled-components";
 import MainPage from './components/Main/App';
 import Affordability from './components/Calculators/affordability/App.jsx';
+import CMHCCalc from './components/Calculators/cmhc/App.jsx';
+import TransferCalculator from './components/Calculators/transfer/App.jsx';
+import PaymentCalculator from './components/Calculators/payment/App.jsx';
+import RenewalCalculator from './components/Calculators/renewal/App.jsx';
 
 // scroll to hash
 function useScrollToHash() {
@@ -31,6 +35,10 @@ function App() {
             </>
           } />
           <Route path="/affordability" element={<Affordability />} />
+          <Route path="/payment-calculator" element={<PaymentCalculator />} />
+          <Route path="/cmhc-calculator" element={<CMHCCalc />} />
+          <Route path="/land-transfer" element={<TransferCalculator />} />
+          <Route path="/renewal-calculator" element={<RenewalCalculator />} />
         </Routes>
       </Container>
     </Router>
@@ -45,4 +53,3 @@ function App() {
         export default App;
 
         const Container = styled.div``;
-           

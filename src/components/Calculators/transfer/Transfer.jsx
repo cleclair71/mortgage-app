@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useHeader } from '../../Main/header/HeaderHooks';
-
-const AffordabilityCalculator = () => {
+// import { routes } from '../../../App';
+const TransCalculator = () => {
     useEffect(() => {
         const script = document.createElement('script');
     
@@ -47,7 +47,7 @@ const AffordabilityCalculator = () => {
 };
 
 
-export default AffordabilityCalculator;
+export default TransCalculator;
 
 const MortgageCalculatorContainer = styled.div`
 padding-bottom: 3em;

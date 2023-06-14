@@ -7,16 +7,16 @@ import Footer from '../../Partials/footer/Footer';
 import BannerContent from './Banner';
 import styled from 'styled-components';
 import HeaderImage from '../../../assets/pexels-melike-benli-10093329.jpg';
-import AffordabilityCalculator from './Affordability';
+import RenCalculator from './Renewal';
 
-const Affordability = () => {
+const RenewalCalculator = () => {
     return (
         <>
             <Banner>
                 <Header />
                <BannerContent />
               </Banner>
-              <AffordabilityCalculator />
+              <RenCalculator />
               {/* <Card /> */}
               {/* <NextSteps /> */}
               {/* <About /> */}
@@ -25,7 +25,7 @@ const Affordability = () => {
     )
 }
 
-export default Affordability;
+export default RenewalCalculator;
 
 const Banner = styled.div`
         background: url(${HeaderImage});

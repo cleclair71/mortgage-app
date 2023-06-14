@@ -8,7 +8,7 @@ const BannerContent = () => {
   return (
     <BannerWrapper>
         <Slide direction="left">
-      <BannerTitle>Affordability Calculator</BannerTitle>
+      <BannerTitle>Transfer Calculator</BannerTitle>
 
       <BannerLine />
 

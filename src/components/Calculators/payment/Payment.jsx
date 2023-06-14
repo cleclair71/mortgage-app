@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useHeader } from '../../Main/header/HeaderHooks';
 
-const AffordabilityCalculator = () => {
+const PayCalculator = () => {
     useEffect(() => {
         const script = document.createElement('script');
     
@@ -47,7 +47,7 @@ const AffordabilityCalculator = () => {
 };
 
 
-export default AffordabilityCalculator;
+export default PayCalculator;
 
 const MortgageCalculatorContainer = styled.div`
 padding-bottom: 3em;
