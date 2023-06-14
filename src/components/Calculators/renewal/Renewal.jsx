@@ -26,7 +26,7 @@ const RenCalculator = () => {
         <MortgageCalculatorContainer bar={bar}>
             <Content>
                
-                <CalculatorWidget data-widget="calc-affordability" data-province="ON" data-lang="en" />
+                <CalculatorWidget data-widget="calc-payment" data-province="ON" data-lang="en" />
                 <LogoLink href="https://www.ratehub.ca/">
                     <LogoImage src="https://www.ratehub.ca/assets/images/widget-logo.png" alt="Ratehub.ca logo" />
                 </LogoLink>
