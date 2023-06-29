@@ -53,11 +53,12 @@ const MainPage = () => {
                 <Header />
                 <BannerContent />
             </Box>
-            <VStack>
+            <VStack pb="5">
                 <NextSteps />
                 <About />
-                <Footer />
+                
             </VStack>
+            <Footer />
         </>
     )
 }

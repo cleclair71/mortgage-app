@@ -5,9 +5,9 @@ const theme = extendTheme({
     custom: {
       header: '#d4d9d4',
       text: '#454a44',
-      backgroundWhite: '#454a44',
+      backgroundDark: '#454a44',
       backgroundBeige: '#eaece9',
-      backgroundDark: '#d8ddd7',
+      backgroundWhite: '#f6f6f8',
     },
   },
   components: {

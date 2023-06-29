@@ -111,6 +111,7 @@ import {
 } from '@chakra-ui/react';
 import { ChevronDownIcon, HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { Link as RouterLink } from 'react-router-dom';
+import SpringButton from '../../../theme/SpringButon';
 
 export default function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -164,7 +165,7 @@ export default function Header() {
             ]}/>
           </HStack>
         </HStack>
-        <Button as={RouterLink} to="/applynow" variant='outline'  size={'sm'}>Apply Now</Button>
+        <SpringButton as={RouterLink} to="/applynow" variant='outline'  size={'sm'}>Apply Now</SpringButton>
       </Flex>
       {isOpen ? (
         <Box pb={4} display={{ md: 'none' }}>
