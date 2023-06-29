@@ -1,8 +1,6 @@
-import HeaderImage from './assets/ficus.png';
-import './App.css';
-import { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
-import styled from "styled-components";
+import { Box, useDisclosure } from "@chakra-ui/react";
+import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import MainPage from './components/Main/App';
 import Affordability from './components/Calculators/affordability/App.jsx';
 import CMHCCalc from './components/Calculators/cmhc/App.jsx';
@@ -27,7 +25,7 @@ function App() {
   return (
     <Router>
       <ScrollToHash />
-      <Container>
+      <Box>
         <Routes>
           <Route path="/" element={
             <>
@@ -40,16 +38,14 @@ function App() {
           <Route path="/land-transfer" element={<TransferCalculator />} />
           <Route path="/renewal-calculator" element={<RenewalCalculator />} />
         </Routes>
-      </Container>
+      </Box>
     </Router>
-        );
+  );
 }
 
-        function ScrollToHash() {
-          useScrollToHash();
-        return null;
+function ScrollToHash() {
+  useScrollToHash();
+  return null;
 }
 
-        export default App;
-
-        const Container = styled.div``;
+export default App;
