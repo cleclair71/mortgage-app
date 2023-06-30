@@ -7,6 +7,7 @@ import CMHCCalc from './components/Calculators/cmhc/App.jsx';
 import TransferCalculator from './components/Calculators/transfer/App.jsx';
 import PaymentCalculator from './components/Calculators/payment/App.jsx';
 import RenewalCalculator from './components/Calculators/renewal/App.jsx';
+import ContactPage from './components/about/contact/App.jsx';
 
 // scroll to hash
 function useScrollToHash() {
@@ -37,6 +38,7 @@ function App() {
           <Route path="/cmhc-calculator" element={<CMHCCalc />} />
           <Route path="/land-transfer" element={<TransferCalculator />} />
           <Route path="/renewal-calculator" element={<RenewalCalculator />} />
+          <Route path="/contact-page" element={<ContactPage />} />
         </Routes>
       </Box>
     </Router>

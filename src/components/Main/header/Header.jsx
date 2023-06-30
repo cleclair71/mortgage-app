@@ -155,7 +155,7 @@ export default function Header() {
             <Link as={RouterLink} to="/rates" px={2} py={1} rounded={'md'}>Rates</Link>
             <NavItem title="About" routes={[
               {name: 'About Us', route: '/about-us'},
-              {name: 'Contact Us', route: '/contact-us'},
+              {name: 'Contact Dora', route: '/contact-page'},
               // Add all your routes
             ]}/>
             <NavItem title="Resources" routes={[

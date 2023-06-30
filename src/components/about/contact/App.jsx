@@ -8,7 +8,7 @@ import Footer from '../../Partials/footer/Footer';
 import { Box, VStack } from "@chakra-ui/react";
 import HeaderImage from '../../../assets/ficus.png';
 
-const MainPage = () => {
+const ContactPage = () => {
     return (
         <>
             <Box bgImage={`url(${HeaderImage})`} bgSize="cover" bgPos="center" m="1rem" h="100vh">
@@ -25,4 +25,4 @@ const MainPage = () => {
     )
 }
 
-export default MainPage;
+export default ContactPage;
