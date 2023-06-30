@@ -8,6 +8,7 @@ import TransferCalculator from './components/Calculators/transfer/App.jsx';
 import PaymentCalculator from './components/Calculators/payment/App.jsx';
 import RenewalCalculator from './components/Calculators/renewal/App.jsx';
 import ContactPage from './components/about/contact/App.jsx';
+import GlossaryPage from "./components/Resources/glossary/App";
 
 // scroll to hash
 function useScrollToHash() {
@@ -39,6 +40,7 @@ function App() {
           <Route path="/land-transfer" element={<TransferCalculator />} />
           <Route path="/renewal-calculator" element={<RenewalCalculator />} />
           <Route path="/contact-page" element={<ContactPage />} />
+          <Route path="/glossary-page" element={<GlossaryPage />} />
         </Routes>
       </Box>
     </Router>
