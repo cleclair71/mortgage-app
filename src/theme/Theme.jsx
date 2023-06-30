@@ -9,6 +9,7 @@ const theme = extendTheme({
       backgroundBeige: '#eaece9',
       backgroundWhite: '#f6f6f8',
       backgroundLight: '#ecefec',
+      accentGreen: '50703e',
     },
   },
   components: {

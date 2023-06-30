@@ -20,6 +20,7 @@ const Contact = () => {
 
   const [hovered, setHovered] = React.useState(false);
   const color = useColorModeValue("custom.text", "custom.backgroundWhite");
+  const accentGreen = useColorModeValue("custom.accentGreen");
   return (
     <Stack direction={["column", "row"]} spacing={18} pt="6" pb="9" >
       <Box p={6} shadow="md" borderWidth="1px" borderRadius="8px">
@@ -50,7 +51,7 @@ const Contact = () => {
             key={index}
           >
             <Grid templateColumns="max-content 1fr" gap={4} alignItems="center" >
-              <Box as={card.icon} w={8} h={8} color="blue.500" />
+              <Box as={card.icon} w={8} h={8} color="green.700" />
               <VStack spacing={1} align="start">
                 <Text fontWeight="bold">{card.title}</Text>
                 <Text>{card.content}</Text>
