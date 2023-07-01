@@ -10,6 +10,7 @@ import RenewalCalculator from './components/Calculators/renewal/App.jsx';
 import ContactPage from './components/about/contact/App.jsx';
 import GlossaryPage from "./components/Resources/glossary/App";
 import FAQPage from "./components/Resources/FAQ/App";
+import ApplyPage from "./components/apply/App";
 
 // scroll to hash
 function useScrollToHash() {
@@ -43,6 +44,7 @@ function App() {
           <Route path="/contact-page" element={<ContactPage />} />
           <Route path="/glossary-page" element={<GlossaryPage />} />
           <Route path="/faq-page" element={<FAQPage />} />
+          <Route path="/apply-page" element={<ApplyPage />} />
         </Routes>
       </Box>
     </Router>

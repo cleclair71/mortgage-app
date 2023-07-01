@@ -107,7 +107,7 @@ import {
   useDisclosure,
   useColorModeValue,
   Stack,
-  Button,
+ 
 } from '@chakra-ui/react';
 import { ChevronDownIcon, HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { Link as RouterLink } from 'react-router-dom';
@@ -115,9 +115,9 @@ import SpringButton from '../../../theme/SpringButon';
 
 export default function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  // const history = useHistory();
   return (
-    <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+    <Box bg="transparent" px={4}>
       <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
         <IconButton
           size={'md'}
@@ -166,7 +166,7 @@ export default function Header() {
             ]}/>
           </HStack>
         </HStack>
-        <SpringButton as={RouterLink} to="/applynow" variant='outline'  size={'sm'}>Apply Now</SpringButton>
+        <SpringButton as={RouterLink} to="/apply-page" variant='outline'  size={'sm'}>Apply Now</SpringButton>
       </Flex>
       {isOpen ? (
         <Box pb={4} display={{ md: 'none' }}>

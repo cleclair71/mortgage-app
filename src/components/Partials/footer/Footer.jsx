@@ -9,7 +9,7 @@ import {
   chakra,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa';
+import { FaTwitter, FaYoutube, FaInstagram, FaFacebook } from 'react-icons/fa';
 
 // import AppStoreBadge from '@/components/AppStoreBadge';
 // import PlayStoreBadge from '@/components/PlayStoreBadge';
@@ -95,14 +95,14 @@ export default function LargeWithAppLinksAndSocial() {
           spacing={4}
           justify={{ md: 'space-between' }}
           align={{ md: 'center' }}>
-          <Text>© 2022 Chakra Templates. All rights reserved</Text>
+          <Text>© 2023 Main Mortgage. All rights reserved</Text>
           <Stack direction={'row'} spacing={6}>
             <SocialButton label={'Twitter'} href={'#'}>
-              <FaTwitter />
+              <FaFacebook />
             </SocialButton>
-            <SocialButton label={'YouTube'} href={'#'}>
+            {/* <SocialButton label={'YouTube'} href={'#'}>
               <FaYoutube />
-            </SocialButton>
+            </SocialButton> */}
             <SocialButton label={'Instagram'} href={'#'}>
               <FaInstagram />
             </SocialButton>
