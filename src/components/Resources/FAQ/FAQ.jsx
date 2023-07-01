@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
 import { VStack, Box, Input, Accordion, AccordionItem, AccordionButton, AccordionIcon, AccordionPanel, Text, Flex, Heading } from "@chakra-ui/react";
-import glossaryData from './glossaryData';
+import FaqData from './FaqData';
 import ResourceCard from '../ResourceCard';
-import SpringButton from '../../../theme/SpringButon'; // import this from your actual file path
+import SpringButon from '../../../theme/SpringButon'; // import this from your actual file path
 
-const Glossary = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+const FAQ = () => {
+  const [searchQuestion, setSearchQuestion] = useState('');
 
   const handleSearchChange = event => {
-    setSearchTerm(event.target.value);
+    setSearchQuestion(event.target.value);
   };
 
-  const filteredGlossary = glossaryData.filter(item =>
-    item.term.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredGlossary = FaqData.filter(item =>
+    item.question.toLowerCase().includes(searchQuestion.toLowerCase())
   );
 
   return (
     <Flex direction={['column', 'row']} justify="space-between">
       <Box flex="3" p={4} minHeight="80vh">
-        <Heading>Glossary</Heading>
+        <Heading>FAQ</Heading>
         <Input
           mt={4}
           mb={4}
@@ -33,13 +33,13 @@ const Glossary = () => {
                 <h2>
                   <AccordionButton>
                     <Box flex="1" textAlign="left">
-                      {item.term}
+                      {item.question}
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  <Text>{item.definition}</Text>
+                  <Text>{item.answer}</Text>
                 </AccordionPanel>
               </AccordionItem>
             ))}
@@ -54,4 +54,4 @@ const Glossary = () => {
   );
 };
 
-export default Glossary;
+export default FAQ;

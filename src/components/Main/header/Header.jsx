@@ -131,8 +131,9 @@ export default function Header() {
           <HStack
             as={'nav'}
             spacing={4}
+            flexDirection={'row'}
             display={{ base: isOpen ? 'flex' : 'none', md: 'flex', sm: 'none' }}>
-            flexDirection={'row'}>
+            
             <NavItem title="Mortgages" routes={[
               {name: 'Home Purchase', route: '/home-purchase'},
               {name: 'Refinance', route: '/refinance'},
@@ -159,7 +160,7 @@ export default function Header() {
               // Add all your routes
             ]}/>
             <NavItem title="Resources" routes={[
-              {name: 'FAQ', route: '/faq'},
+              {name: 'FAQ', route: '/faq-page'},
               {name: 'Glossary', route: '/glossary-page'},
               // Add all your routes
             ]}/>
@@ -196,7 +197,7 @@ export default function Header() {
               // Add all your routes
             ]}/>
             <NavItem title="Resources" routes={[
-              {name: 'FAQ', route: '/faq'},
+              {name: 'FAQ', route: '/faq-page'},
               {name: 'Glossary', route: '/glossary-page'},
               // Add all your routes
             ]}/>

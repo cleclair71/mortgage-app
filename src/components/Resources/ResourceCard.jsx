@@ -1,19 +1,22 @@
 import React from 'react';
-import { Box, Link, VStack, Heading } from '@chakra-ui/react';
+import { Box, Link, VStack, Heading, useMediaQuery } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 
 const resources = [
-  {name: 'FAQ', route: '/faq'},
+  {name: 'FAQ', route: '/faq-page'},
   {name: 'Glossary', route: '/glossary-page'},
-  // Add all your routes
+
 ];
 
-const ResourceCard = () => (
+const ResourceCard = () => {
+    const [isLargerThan530] = useMediaQuery("(min-width: 530px)");
+    return isLargerThan530 ? (
   <Box 
     flex="1" 
     position="sticky" 
     top="0" 
     maxHeight="90vh" 
+    minWidth="200px"
     overflowY="auto"
     ml={[5, 2]} 
     mt={[10, 5]} 
@@ -38,6 +41,7 @@ const ResourceCard = () => (
       ))}
     </VStack>
   </Box>
-);
+) : null;
+};
 
 export default ResourceCard;
