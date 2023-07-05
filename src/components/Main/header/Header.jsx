@@ -199,7 +199,7 @@ export default function Header() {
             <NavItem title="Resources" routes={[
               {name: 'FAQ', route: '/faq-page'},
               {name: 'Glossary', route: '/glossary-page'},
-              // Add all your routes
+              {name: 'Documents You Need', route: '/doc-page'},
             ]}/>
           </Stack>
         </Box>
