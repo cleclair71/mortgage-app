@@ -45,7 +45,7 @@ function App() {
           <Route path="/faq-page" element={LoadableComponent(FAQPage)} />
           <Route path="/apply-page" element={LoadableComponent(ApplyPage)} />
           <Route path="/doc-page" element={LoadableComponent(DocPage)} />
-          <Route path="/mortgage-page" element={LoadableComponent(MortgagePage)} />
+          <Route path="/Mortgages/*" element={LoadableComponent(MortgagePage)} />
         </Routes>
       </Box>
     </Router>

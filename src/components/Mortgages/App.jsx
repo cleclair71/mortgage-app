@@ -20,10 +20,7 @@ const MortgagePage = () => {
                     location.pathname === '/Mortgages/private' ? 4 :
                     location.pathname === '/Mortgages/refinance' ? 5 :
                     location.pathname === '/Mortgages/second-mortgage' ? 6 : 7
-
-
     );
-
     useEffect(() => {
         setTabIndex(
             location.pathname === '/Mortgages/home-purchase' ? 0 :
