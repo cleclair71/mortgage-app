@@ -9,7 +9,12 @@ import {
     Heading,
     List,
     ListItem,
-    Button
+    Button,
+    Table,
+    Tbody,
+    Tr,
+    Td,
+    Th
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import SpringButton from '../../../theme/SpringButon';
@@ -17,8 +22,8 @@ import SpringButton from '../../../theme/SpringButon';
 const HomePurchase = () => {
     return (
         <Box p={4}>
-            <Heading mb={4}>Home Purchasing Guide</Heading>
-            <Accordion allowToggle>
+            <Heading mb={6}>Home Purchasing Guide</Heading>
+            <Accordion defaultIndex={[0]} allowMultiple>
                 <AccordionItem>
                     <AccordionButton _expanded={{ bg: 'green', color: 'white' }}>
                         <Box flex="1" textAlign="left">
@@ -36,14 +41,14 @@ const HomePurchase = () => {
                                     <AccordionIcon />
                                 </AccordionButton>
                                 <AccordionPanel pb={4}>
-                                    <Text mb={2}>
+                                    <Text mb={3}>
                                         The First-Time Home Buyer Incentive is a program that eases the process of purchasing a home by offering an additional 5% or 10% towards your down payment, courtesy of the Government. This program employs a shared equity mechanism, which implies that when repaying the Government, either 5% or 10% of the property's market value at the time of repayment is expected. The maximum repayment amount would be:
                                     </Text>
-                                    <List styleType="disc" pl={5} mb={2}>
+                                    <List styleType="disc" pl={5} mb={3}>
                                         <ListItem>In case of appreciation, the Incentive amount plus a maximum gain to the Government of 8% per annum (not compounded) on the Incentive amount from the date of advance to the time of repayment.</ListItem>
                                         <ListItem>In case of depreciation, the Incentive amount minus a maximum loss to the Government of 8% per annum (not compounded) on the Incentive amount from the date of advance to the time of repayment.</ListItem>
                                     </List>
-                                    <Text mb={2}>
+                                    <Text mb={3}>
                                         This incentive is specifically for first-time homebuyers. You're considered a first-time homebuyer if you satisfy any of the following conditions:
                                     </Text>
                                     <List styleType="disc" pl={5}>
@@ -62,8 +67,8 @@ const HomePurchase = () => {
                                     <AccordionIcon />
                                 </AccordionButton>
                                 <AccordionPanel pb={4}>
-                                    <Text mb={2}>The First-Time Home Buyer Incentive has certain eligibility criteria that need to be satisfied:</Text>
-                                    <List styleType="disc" pl={5} mb={2}>
+                                    <Text mb={3}>The First-Time Home Buyer Incentive has certain eligibility criteria that need to be satisfied:</Text>
+                                    <List styleType="disc" pl={5} mb={3}>
                                         <ListItem>Your total annual qualifying income doesn’t exceed $120,000 ($150,000 if the home you are purchasing is in Toronto, Vancouver, or Victoria).</ListItem>
                                         <ListItem>Your total borrowing is no more than 4 times your qualifying income (4.5 times if the home you are purchasing```jsx
                                             is in Toronto, Vancouver or Victoria).</ListItem>
@@ -71,11 +76,11 @@ const HomePurchase = () => {
                                         <ListItem>You are a Canadian citizen, permanent resident, or non-permanent resident authorized to work in Canada.</ListItem>
                                         <ListItem>You meet the minimum down payment requirements with traditional funds.</ListItem>
                                     </List>
-                                    <Text mb={2}>
+                                    <Text mb={3}>
                                         The Incentive is akin to a second mortgage on your home. Your first mortgage must constitute more than 80% of the property's value and be eligible through Canada Guaranty, CMHC, or Sagen. The insurance premium is based on the loan-to-value ratio of the first mortgage only.
                                     </Text>
-                                    <Heading size="sm" mb={2} mt={4}>Important Considerations</Heading>
-                                    <Text>
+                                    <Heading size="sm" mb={3} mt={4}>Important Considerations</Heading>
+                                    <Text mb={3}>
                                         The Incentive may come with additional costs such as higher legal fees, appraisal fees, other fees related to the incentive, and increased property insurance premiums. It's essential to consider these before making a decision.
                                     </Text>
                                 </AccordionPanel>
@@ -91,17 +96,17 @@ const HomePurchase = () => {
                         <AccordionIcon />
                     </AccordionButton>
                     <AccordionPanel pb={4}>
-                        <Text mb={2}>
+                        <Text mb={3}>
                             Finding a place to call home can be exciting and challenging, we enjoy helping you find that sense of pride and stability of homeownership.
                             By definition “A person's primary residence, or main residence is the dwelling where they usually live, typically a house or an apartment. ... A primary residence is considered to be a legal residence for the purpose of income tax and/or acquiring a mortgage.”
                             In order for your new home to qualify as your primary residence, you must answer yes to the following questions:
                         </Text>
-                        <list styleType="disc" pl={5} mb={3}>
+                        <List styleType="disc" pl={5} mb={3}>
                             <ListItem>Are you going to be living in this home for a majority of the calendar year?</ListItem>
                             <ListItem>Are you employed in the same city/town or area as the property? (or within reasonable driving distance)</ListItem>
-                        </list>
-                        <SpringButton as={Link} to="/doc-page" variant="outline">
-                            Documentations
+                        </List>
+                        <SpringButton mb={3} as={Link} to="/doc-page" variant="outline">
+                            Important Documents
                         </SpringButton>
                         <Text mb={2}>
                             If you are in the market for your first home, your second or tenth home, give us a call today, I’m here to help find solutions that work for your needs, wants and lifestyle.
@@ -210,26 +215,161 @@ const HomePurchase = () => {
                                     All Type A property requirements apply to Type B, except for the
                                     following:
                                 </text>
+
                                 <List styleType="disc" pl={5} mb={3}>
-                                    <list styleType="disc" pl={5} mb={3}>
-                                        <ListItem>No permanent heat source is required. For example, a wood stove, fireplace, stove or heat blower is acceptable.</ListItem>
-                                        <ListItem>Foundation may be floating. For example, sitting on blocks.</ListItem>
-                                        <ListItem>Water source needn't be drinkable. However, there must be running water in the home.
-                                            Boat access only accepted.
-                                        </ListItem>
-                                        <ListItem>Seasonal road use is acceptable. This means the road does not have to be plowed during the winter.
-                                        </ListItem>
-                                    </list>
+                                    <ListItem>No permanent heat source is required. For example, a wood stove, fireplace, stove or heat blower is acceptable.</ListItem>
+                                    <ListItem>Foundation may be floating. For example, sitting on blocks.</ListItem>
+                                    <ListItem>Water source needn't be drinkable. However, there must be running water in the home.
+                                        Boat access only accepted.
+                                    </ListItem>
+                                    <ListItem>Seasonal road use is acceptable. This means the road does not have to be plowed during the winter.
+                                    </ListItem>
                                 </List>
+
                             </Box>
                         </Box>
+                    </AccordionPanel >
+                </AccordionItem >
+
+
+                {/* renos */}
+
+                <AccordionItem>
+                    <AccordionButton _expanded={{ bg: 'green', color: 'white' }}>
+                        <Box flex="1" textAlign="left">
+                            <Heading size="md">Purchase, Improvements and Renovations</Heading>
+                        </Box>
+                        <AccordionIcon />
+                    </AccordionButton>
+                    <AccordionPanel pb={4}>
+                        <Text mb={3}>
+                            After identifying a suitable home, it is essential to obtain quotes from contractors for the proposed renovation work. These quotes are then factored into the overall purchase price, establishing a revised value for the property. Subsequently, your minimum down payment is calculated based on this new value.
+                        </Text>
+                        <Text mb={3}>
+                            The quotes, along with the offer to purchase, are submitted to the lender for approval. Both the lender and mortgage insurer carefully review the quotes to ensure that the added costs contribute directly to the appraised value of the home. In certain cases, an appraisal may be required to assess this accurately.
+                        </Text>
+                        <Text mb={3}>
+                            Upon closing the transaction, the funds are transferred to your lawyer, who will hold them in trust until the renovation work is completed. Following the finalization of the renovations, an appraiser will conduct an inspection and prepare a comprehensive report, which will be submitted to the lender. Once the lender reviews and approves the report, your lawyer will be instructed to release the funds to you.
+                        </Text>
+                        <Text mb={3}>
+                            It is important to note that, under the current regulations, you have the option to include up to 20% of the purchase price, with a maximum limit of $40,000, into your mortgage to cover renovation expenses.
+                        </Text>
+                        <Text mb={3}>
+                            However, it is crucial to bear in mind that any changes to the type of work being performed after the mortgage funding are generally not permitted. In other words, you are unable to submit a quote for a new roof and subsequently decide to redirect the funds towards finishing the basement.
+                        </Text>
+                        <SpringButton as={Link} to="/doc-page" variant="outline" mb={3}>
+                            Important Documents
+                        </SpringButton>
+
+                        <Box
+                            flex="1"
+                            position="relative"
+                            maxHeight="90vh"
+                            margin="auto"
+                            minWidth="200px"
+                            overflowY="auto"
+                            ml={[5, 2]}
+                            mt={[10, 5]}
+                            mb="3"
+                            p={5}
+                            bg="gray.100"
+                            borderRadius="md"
+                            boxShadow="md"
+                            display="flex"
+                            flexDirection={["column", "column", "row"]}
+                        >
+
+                            <Heading size="sm" mb={3}>
+                                Here's an example:
+                            </Heading>
+                            <Table variant="simple" size="md">
+                                <Tbody>
+                                    <Tr>
+                                        <Td bg="gray.100" fontWeight="bold">Purchase price of home</Td>
+                                        <Td>$260,000</Td>
+                                    </Tr>
+                                    <Tr>
+                                        <Td bg="gray.100" fontWeight="bold">Upgrades</Td>
+                                        <Td>$15,000</Td>
+                                    </Tr>
+                                    <Tr>
+                                        <Td bg="gray.100" fontWeight="bold">New Value</Td>
+                                        <Td>$275,000</Td>
+                                    </Tr>
+                                    <Tr>
+                                        <Td bg="gray.100" fontWeight="bold">Minimum down payment</Td>
+                                        <Td>$13,750 (5% of new value)</Td>
+                                    </Tr>
+                                    <Tr>
+                                        <Td bg="gray.100" fontWeight="bold">Mortgage Amount</Td>
+                                        <Td>$261,250 (plus CMHC/Genworth)</Td>
+                                    </Tr>
+                                </Tbody>
+                            </Table>
 
 
 
+                        </Box>
 
                     </AccordionPanel>
                 </AccordionItem>
-            </Accordion>
+
+{/* New to Canada */}
+                <AccordionItem>
+                    <AccordionButton _expanded={{ bg: 'green', color: 'white' }}>
+                        <Box flex="1" textAlign="left">
+                            <Heading size="md">New to Canada</Heading>
+                        </Box>
+                        <AccordionIcon />
+                    </AccordionButton>
+                    <AccordionPanel pb={4}>
+                        <Text mb={3}>
+                        Navigating the process of obtaining a mortgage as a newcomer to Canada can pose its challenges. Lenders traditionally rely on credit history to assess mortgage eligibility, a factor that requires time to establish. When you are new to Canada, it is understandable that your credit profile may be limited or non-existent. However, rest assured, we offer specialized programs tailored to assist you in this situation. You may be eligible for a down payment as low as 5% for your property acquisition. The specific mortgage options available to you, as well as the documentation required by your mortgage agent, will depend on your status as a permanent resident, your credit rating, the amount you have saved for a down payment, and the source of those funds. In some cases, lenders may request credit history or bank statements from your country of origin to aid in their decision-making process.
+                        </Text>
+                       
+                        <SpringButton mb={3} as={Link} to="/doc-page" variant="outline">
+                            Important Documents
+                        </SpringButton>
+                        <Text mb={3}>
+                        If you hold permanent resident status and boast a strong credit rating, you may be well-positioned to qualify for a conventional mortgage. However, if you do not meet the specific qualification criteria for a conventional mortgage, there is still hope. The "New to Canada" Programs offered by Canada's three mortgage default insurance providers (CMHC, Genworth Financial, or Canada Guaranty) present viable options for newcomers like yourself, aiming to facilitate mortgage access for home purchases.
+                        </Text>
+                        <Text mb={3}>
+                        We understand the unique challenges you may face as a newcomer, and we are committed to supporting you throughout the process of realizing your homeownership dreams in Canada.
+                        </Text>
+                    </AccordionPanel>
+                </AccordionItem>
+
+
+                <AccordionItem>
+                    <AccordionButton _expanded={{ bg: 'green', color: 'white' }}>
+                        <Box flex="1" textAlign="left">
+                            <Heading size="md">Military/Employer Relocation</Heading>
+                        </Box>
+                        <AccordionIcon />
+                    </AccordionButton>
+                    <AccordionPanel pb={4}>
+                        <Text mb={3}>
+                        Employer relocation policies may vary significantly, with many companies covering expenses related to house-hunting trips and relocation costs, including moving services, family travel arrangements, temporary housing, and more.
+                        </Text>
+                        <Box flex="1" textAlign="left">
+                            <Heading size="sm">Where to Start</Heading>
+                        </Box>
+                        <Text mb={3}>
+                        In navigating the complexities of relocation, it is paramount to have professionals who possess extensive local knowledge and robust connections within Kingston and its neighboring communities. This is precisely where our expertise shines.
+                        </Text>
+                        <SpringButton mb={3} as="a"
+      href="https://bgrsguide.bgrs.ca/account/login"
+      variant="outline"
+      target="_blank"
+      rel="noopener noreferrer">
+                        Access BGRS Account
+                        </SpringButton>
+                        <Text mb={3}>
+                            If you are in the market for your first home, your second or tenth home, give us a call today, I’m here to help find solutions that work for your needs, wants and lifestyle.
+                        </Text>
+                    </AccordionPanel>
+                </AccordionItem>
+            </Accordion >
         </Box >
     );
 }
