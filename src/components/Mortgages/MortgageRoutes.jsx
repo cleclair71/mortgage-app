@@ -12,6 +12,7 @@ const MortgageRoutes = () => {
             <Route path="private" element={LoadableComponent(() => import('./components/Private'))} />
             <Route path="refinance" element={LoadableComponent(() => import('./components/Refinance'))} />
             <Route path="second-mortgage" element={LoadableComponent(() => import('./components/SecondMortgage'))} />
+            <Route path="renewing" element={LoadableComponent(() => import('./components/Renew'))} />
         </Routes>
     );
 }

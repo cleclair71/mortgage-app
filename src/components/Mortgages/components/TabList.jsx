@@ -11,6 +11,7 @@ const MortgageTabList = ({ tabIndex }) => {
             <Tab as={Link} to="/Mortgages/private" _selected={{ bg: "white", color: "black" }} _hover={{ color: "grey" }}>Private Mortgages</Tab>
             <Tab as={Link} to="/Mortgages/refinance" _selected={{ bg: "white", color: "black" }} _hover={{ color: "grey" }}>Refinance</Tab>
             <Tab as={Link} to="/Mortgages/second-mortgage" _selected={{ bg: "white", color: "black" }} _hover={{ color: "grey" }}>Second Mortgage</Tab>
+            <Tab as={Link} to="/Mortgages/renewing" _selected={{ bg: "white", color: "black" }} _hover={{ color: "grey" }}>Renewals</Tab>
         </TabList>
     );
 }

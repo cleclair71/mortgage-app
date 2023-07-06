@@ -14,10 +14,22 @@ const GlossaryPage = () => {
                 <Header />
                 <BannerContent />
             </Box>
+            <Box
+                pb="5em"
+                w={{ base: "100%", sm: "100%", md: "80%" }}
+                mx={{ base: "0", sm: "0", md: "auto" }}
+                bgColor="white"
+                mt="-16em"
+                p="2em"
+                borderRadius="md"
+                boxShadow="0 0 10px rgba(0,0,0,0.2)"
+                mb="5em"
+            >
             <VStack pb="5">
                 <Glossary />
                 
             </VStack>
+            </Box>
             <Footer />
         </>
     )

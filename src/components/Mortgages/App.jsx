@@ -19,7 +19,8 @@ const MortgagePage = () => {
                     location.pathname === '/Mortgages/equity' ? 3 :
                     location.pathname === '/Mortgages/private' ? 4 :
                     location.pathname === '/Mortgages/refinance' ? 5 :
-                    location.pathname === '/Mortgages/second-mortgage' ? 6 : 7
+                    location.pathname === '/Mortgages/second-mortgage' ? 6 :
+                    location.pathname === '/Mortgages/renewing' ? 7 : 8
     );
     useEffect(() => {
         setTabIndex(
@@ -29,7 +30,8 @@ const MortgagePage = () => {
                         location.pathname === '/Mortgages/equity' ? 3 :
                         location.pathname === '/Mortgages/private' ? 4 :
                         location.pathname === '/Mortgages/refinance' ? 5 :
-                        location.pathname === '/Mortgages/second-mortgage' ? 6 : 7
+                        location.pathname === '/Mortgages/second-mortgage' ? 6 :
+                        location.pathname === '/Mortgages/renewing' ? 7 : 8
         );
     }, [location]);
 
