@@ -9,6 +9,7 @@ const GlossaryPage = lazy(() => import('./components/Resources/glossary/App'));
 const FAQPage = lazy(() => import('./components/Resources/FAQ/App'));
 const ApplyPage = lazy(() => import('./components/apply/App'));
 const DocPage = lazy(() => import('./components/Resources/documents/App'));
+const MortgagePage = lazy(() => import('./components/Mortgages/App'));
 
 // scroll to hash
 function useScrollToHash() {
@@ -44,6 +45,7 @@ function App() {
           <Route path="/faq-page" element={LoadableComponent(FAQPage)} />
           <Route path="/apply-page" element={LoadableComponent(ApplyPage)} />
           <Route path="/doc-page" element={LoadableComponent(DocPage)} />
+          <Route path="/mortgage-page" element={LoadableComponent(MortgagePage)} />
         </Routes>
       </Box>
     </Router>

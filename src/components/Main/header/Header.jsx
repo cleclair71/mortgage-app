@@ -134,15 +134,15 @@ export default function Header() {
             flexDirection={'row'}
             display={{ base: isOpen ? 'flex' : 'none', md: 'flex', sm: 'none' }}>
             
-            <NavItem title="Services" routes={[
-              {name: 'Home Purchase', route: '/home-purchase'},
-              {name: 'Refinance', route: '/refinance'},
-              {name: 'Renewal', route: '/renewal'},
-              {name: 'Second Mortgage', route: '/second-mortgage'},
-              {name: 'Commercial Mortgage', route: '/commercial-mortgage'},
-              {name: 'Debt Consolidation', route: '/debt-consolidation'},
-              {name: 'Home Equity Mortgage', route: '/home-equity-mortgage'},
-                {name: 'Private Mortgage', route: '/private-mortgage'},
+            <NavItem title="Mortgages" routes={[
+              {name: 'Home Purchase', route: '/Mortgages/home-purchase'},
+              {name: 'Refinance', route: '/Mortgages/refinance'},
+              {name: 'Renewal', route: '/Mortgages/renewal'},
+              {name: 'Second Mortgage', route: '/Mortgages/second-mortgage'},
+              {name: 'Commercial Mortgage', route: '/Mortgages/commercial-mortgage'},
+              {name: 'Debt Consolidation', route: '/Mortgages/debt'},
+              {name: 'Home Equity Mortgage', route: '/Mortgages/equity'},
+                {name: 'Private Mortgage', route: '/Mortgages/private'},
               // Add all your routes
             ]}/>
            <NavItem title="Calculators" routes={[
@@ -171,14 +171,14 @@ export default function Header() {
         <Box pb={4} display={{ md: 'none' }}>
           <Stack as={'nav'} spacing={4}>
           <NavItem title="Mortgages" routes={[
-              {name: 'Home Purchase', route: '/home-purchase'},
-              {name: 'Refinance', route: '/refinance'},
-              {name: 'Renewal', route: '/renewal'},
-              {name: 'Second Mortgage', route: '/second-mortgage'},
-              {name: 'Commercial Mortgage', route: '/commercial-mortgage'},
-              {name: 'Debt Consolidation', route: '/debt-consolidation'},
-              {name: 'Home Equity Mortgage', route: '/home-equity-mortgage'},
-                {name: 'Private Mortgage', route: '/private-mortgage'},
+              {name: 'Home Purchase', route: '/Mortgages/home-purchase'},
+              {name: 'Refinance', route: '/Mortgages/refinance'},
+              {name: 'Renewal', route: '/Mortgages/renewal'},
+              {name: 'Second Mortgage', route: '/Mortgages/second-mortgage'},
+              {name: 'Commercial Mortgage', route: '/Mortgages/commercial'},
+              {name: 'Debt Consolidation', route: '/Mortgages/debt'},
+              {name: 'Home Equity Mortgage', route: '/Mortgages/equity'},
+                {name: 'Private Mortgage', route: '/Mortgages/private'},
               // Add all your routes
             ]}/>
            <NavItem title="Calculators" routes={[
