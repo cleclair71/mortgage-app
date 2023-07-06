@@ -1,5 +1,5 @@
 import React, { useLayoutEffect } from 'react';
-import { Box, Link } from "@chakra-ui/react";
+import { Box, Link, Heading } from "@chakra-ui/react";
 
 const TransCalculator = () => {
   useLayoutEffect(() => {
@@ -22,8 +22,9 @@ const TransCalculator = () => {
       flexDirection="column"
       alignItems="center"
       flex="2"
-      pt="3em"
+      pt="1em"
     >
+       <Heading as="h2" size="lg" pb="2rem">Transfer Tax Calculator</Heading>
       <Box
         d="flex"
         alignItems="center"

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Box, Link } from "@chakra-ui/react";
+import { Box, Link, Heading } from "@chakra-ui/react";
 
 const RenCalculator = () => {
   useEffect(() => {
@@ -24,8 +24,9 @@ const RenCalculator = () => {
       flexDirection="column"
       alignItems="center"
       flex="2"
-      pt="3em"
+      pt="1em"
     >
+       <Heading as="h2" size="lg" pb="2rem">Renewal Calculator</Heading>
       <Box
         d="flex"
         alignItems="center"
