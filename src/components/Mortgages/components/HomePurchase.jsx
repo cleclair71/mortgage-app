@@ -132,16 +132,39 @@ const HomePurchase = () => {
                         <AccordionIcon />
                     </AccordionButton>
                     <AccordionPanel pb={4}>
-                        <p>
+                        <Text mb={3}>
                         Exploring the possibility of acquiring a picturesque cottage, a tranquil summer residence, or a conveniently located city condominium as your secondary home? Seize the opportunity to leverage the equity in your current home to finance either the down payment or the entire purchase. Generally, a minimum down payment of 5% is required for secondary homes, though certain property types may warrant higher down payment thresholds.
-                        </p>
-                        <ol>
-                            <li>Are you going to be living in this home for a majority of the calendar year?</li>
-                            <li>Are you employed in the same city/town or area as the property? (or within reasonable driving distance)</li>
-                        </ol>
-                        <SpringButton as={Link} to="/doc-page" variant="outline">
-                            Documentations
+                        </Text>
+                        <Text mb={3}>
+                        Before embarking on your quest for the ideal second property, it is imperative to engage in thorough consultations with trusted experts, including your mortgage agent/broker, financial planner, and realtor. These seasoned advisors will assist you in establishing a well-defined purchase budget, unraveling potential tax implications, and ensuring the identification of a property that impeccably aligns with your specific requirements.
+                        </Text>
+                        <Text mb={3}>
+                        When seeking a charming summer cottage, bear in mind that lenders impose certain restrictions on property types, which influence the corresponding down payment criteria. For properties meeting the Type A Criteria (see below), securing a mortgage with a mere 5% down payment is feasible. Conversely, Type B properties (see below) typically necessitate a minimum 10% down payment. Opting to forgo Mortgage Default Insurance may call for down payments ranging from 20% to 50%, contingent upon the property criteria. Rely on our expertise to guide you through the myriad options at your disposal.
+                        </Text>
+                        <Text mb={3}>
+                        In the case of year-round homes designated as secondary properties, a 5% down payment is generally applicable, affording you the opportunity to fulfill your aspirations.
+                        </Text>
+                        <Text mb={3}>
+                        If your country abode leaves you yearning for a weekday sanctuary in the bustling city, fear not. Typically, a down payment as low as 5% suffices to secure a mortgage for such desirable condominium acquisitions.
+                        </Text>
+                        <Text mb={3}>
+                        Unveil the perfect vacation home that harmonizes with your fiscal prudence and lifestyle preferences. Entrust us with the privilege of transforming your cherished dream of owning a captivating getaway into an awe-inspiring reality.
+                        </Text>
+                        <SpringButton as={Link} to="/doc-page" variant="outline" mb={3}>
+                            Important Documents
                         </SpringButton>
+                        <Text mb={3}>
+                        Figuring out your second home budget is another thing to think about. Here is a list we have compiled:
+                        </Text>
+                        <List styleType="disc" pl={5} mb={3}>
+                                        <ListItem>Insurance</ListItem>
+                                        <ListItem>Property taxes</ListItem>
+                                        <ListItem>Utilities (is it 3 season or 4?)</ListItem>
+                                        <ListItem>Maintenance and repairs</ListItem>
+                                        <ListItem>What will your mortgage be?</ListItem>
+                                        <ListItem> Entertainment (TV, Internet, phone, etc.)</ListItem>
+                                    </List>
+
                         <p>
                             If you are in the market for your first home, your second or tenth home, give us a call today, I’m here to help find solutions that work for your needs, wants and lifestyle.
                         </p>
