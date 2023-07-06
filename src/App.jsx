@@ -1,12 +1,8 @@
-import { Box, useDisclosure } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import MainPage from './components/Main/App';
-import Affordability from './components/Calculators/affordability/App.jsx';
-import CMHCCalc from './components/Calculators/cmhc/App.jsx';
-import TransferCalculator from './components/Calculators/transfer/App.jsx';
-import PaymentCalculator from './components/Calculators/payment/App.jsx';
-import RenewalCalculator from './components/Calculators/renewal/App.jsx';
+import CalculatorPage from './components/Calculators/App.jsx';
 import ContactPage from './components/about/contact/App.jsx';
 import GlossaryPage from "./components/Resources/glossary/App";
 import FAQPage from "./components/Resources/FAQ/App";
@@ -32,16 +28,8 @@ function App() {
       <ScrollToHash />
       <Box>
         <Routes>
-          <Route path="/" element={
-            <>
-              <MainPage />
-            </>
-          } />
-          <Route path="/affordability" element={<Affordability />} />
-          <Route path="/payment-calculator" element={<PaymentCalculator />} />
-          <Route path="/cmhc-calculator" element={<CMHCCalc />} />
-          <Route path="/land-transfer" element={<TransferCalculator />} />
-          <Route path="/renewal-calculator" element={<RenewalCalculator />} />
+          <Route path="/" element={<MainPage />} />
+          <Route path="/calculators/*" element={<CalculatorPage />} />
           <Route path="/contact-page" element={<ContactPage />} />
           <Route path="/glossary-page" element={<GlossaryPage />} />
           <Route path="/faq-page" element={<FAQPage />} />

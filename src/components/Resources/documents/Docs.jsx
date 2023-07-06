@@ -28,7 +28,7 @@ const ChecklistCategory = ({ title, children, color, isOpen, onToggle }) => {
             </Button>
             <Collapse in={isOpen}>
                 <Heading as="h2" size="lg">{title}</Heading>
-                <Grid templateColumns={children.length >= 3 ? "repeat(2, 1fr)" : "1fr"} gap={6} pt="7">
+                <Grid templateColumns={children.length >= 3 ? "repeat(2, 1fr)" : "1fr"} gap={3} pt="7">
                     {children}
                 </Grid>
             </Collapse>

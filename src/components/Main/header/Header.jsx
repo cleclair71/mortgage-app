@@ -134,7 +134,7 @@ export default function Header() {
             flexDirection={'row'}
             display={{ base: isOpen ? 'flex' : 'none', md: 'flex', sm: 'none' }}>
             
-            <NavItem title="Mortgages" routes={[
+            <NavItem title="Services" routes={[
               {name: 'Home Purchase', route: '/home-purchase'},
               {name: 'Refinance', route: '/refinance'},
               {name: 'Renewal', route: '/renewal'},
@@ -145,15 +145,14 @@ export default function Header() {
                 {name: 'Private Mortgage', route: '/private-mortgage'},
               // Add all your routes
             ]}/>
-            <NavItem title="Calculators" routes={[
-              {name: 'Affordability Calculator', route: '/affordability'},
-              {name: 'Payment Calculator', route: '/payment-calculator'},
-                {name: 'CMHC Calculator', route: '/cmhc-calculator'},
-                {name: 'Land Transfer Tax Calculator', route: '/land-transfer'},
-                {name: 'Renewal Calculator', route: '/renewal-calculator'},
-              // Add all your routes
-            ]}/>
-            <Link as={RouterLink} to="/rates" px={2} py={1} rounded={'md'}>Rates</Link>
+           <NavItem title="Calculators" routes={[
+  {name: 'Affordability Calculator', route: '/calculators/affordability'},
+  {name: 'Payment Calculator', route: '/calculators/payment'},
+  {name: 'CMHC Calculator', route: '/calculators/cmhc'},
+  {name: 'Land Transfer Tax Calculator', route: '/calculators/transfer'},
+  {name: 'Renewal Calculator', route: '/calculators/renewal'},
+]}/>
+            {/* <Link as={RouterLink} to="/rates" px={2} py={1} rounded={'md'}>Rates</Link> */}
             <NavItem title="About" routes={[
               {name: 'About Us', route: '/about-us'},
               {name: 'Contact Dora', route: '/contact-page'},
@@ -182,15 +181,14 @@ export default function Header() {
                 {name: 'Private Mortgage', route: '/private-mortgage'},
               // Add all your routes
             ]}/>
-            <NavItem title="Calculators" routes={[
-              {name: 'Affordability Calculator', route: '/affordability'},
-              {name: 'Payment Calculator', route: '/payment-calculator'},
-                {name: 'CMHC Calculator', route: '/cmhc-calculator'},
-                {name: 'Land Transfer Tax Calculator', route: '/land-transfer'},
-                {name: 'Renewal Calculator', route: '/renewal-calculator'},
-              // Add all your routes
-            ]}/>
-            <Link as={RouterLink} to="/rates" px={2} py={1} rounded={'md'}>Rates</Link>
+           <NavItem title="Calculators" routes={[
+  {name: 'Affordability Calculator', route: '/calculators/affordability'},
+  {name: 'Payment Calculator', route: '/calculators/payment'},
+  {name: 'CMHC Calculator', route: '/calculators/cmhc'},
+  {name: 'Land Transfer Tax Calculator', route: '/calculators/transfer'},
+  {name: 'Renewal Calculator', route: '/calculators/renewal'},
+]}/>
+            {/* <Link as={RouterLink} to="/rates" px={2} py={1} rounded={'md'}>Rates</Link> */}
             <NavItem title="About" routes={[
               {name: 'About Us', route: '/about-us'},
               {name: 'Contact Us', route: '/contact-us'},
@@ -209,7 +207,7 @@ export default function Header() {
 }
 
 const NavItem = ({title, routes}) => {
-    const bg = useColorModeValue('gray.200', 'gray.700');
+  const bg = useColorModeValue('gray.200', 'gray.700');
   return (
     <Menu>
       {({ isOpen }) => (
