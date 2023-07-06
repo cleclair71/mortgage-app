@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import Header from '../Main/header/Header';
 import Footer from '../Partials/footer/Footer';
 import BannerContent from './Banner';
 import HeaderImage from '../../assets/pexels-melike-benli-10093329.jpg';
-import Affordability from './Affordability';
-import PayCalculator from './Payment';
-import CMHCCalculator from './CMHC';
-import TransCalculator from './Transfer';
-import RenCalculator from './Renewal';
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { Link } from 'react-router-dom';
-import { Box, VStack, Tab, Tabs, TabList, TabPanel, TabPanels, useColorModeValue } from "@chakra-ui/react";
+import { Box, VStack, Tab, Tabs, TabList, useColorModeValue } from "@chakra-ui/react";
+
+const Affordability = lazy(() => import('./Affordability'));
+const PayCalculator = lazy(() => import('./Payment'));
+const CMHCCalculator = lazy(() => import('./CMHC'));
+const TransCalculator = lazy(() => import('./Transfer'));
+const RenCalculator = lazy(() => import('./Renewal'));
 
 const CalculatorPage = () => {
     const location = useLocation();
@@ -59,11 +60,13 @@ const CalculatorPage = () => {
                     </Tabs>
                     <Box mt={5}>
                         <Routes>
-                            <Route path="affordability" element={<Affordability />} />
-                            <Route path="payment" element={<PayCalculator />} />
-                            <Route path="cmhc" element={<CMHCCalculator />} />
-                            <Route path="transfer" element={<TransCalculator />} />
-                            <Route path="renewal" element={<RenCalculator />} />
+                            <Suspense fallback={<div>Loading...</div>}>
+                                <Route path="affordability" element={<Affordability />} />
+                                <Route path="payment" element={<PayCalculator />} />
+                                <Route path="cmhc" element={<CMHCCalculator />} />
+                                <Route path="transfer" element={<TransCalculator />} />
+                                <Route path="renewal" element={<RenCalculator />} />
+                            </Suspense>
                         </Routes>
                     </Box>
                 </VStack>

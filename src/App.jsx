@@ -1,13 +1,14 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Spinner } from "@chakra-ui/react";
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
-import { useEffect } from "react";
-import MainPage from './components/Main/App';
-import CalculatorPage from './components/Calculators/App.jsx';
-import ContactPage from './components/about/contact/App.jsx';
-import GlossaryPage from "./components/Resources/glossary/App";
-import FAQPage from "./components/Resources/FAQ/App";
-import ApplyPage from "./components/apply/App";
-import DocPage from "./components/Resources/documents/App";
+import { Suspense, useEffect, lazy } from "react";
+
+const MainPage = lazy(() => import('./components/Main/App'));
+const CalculatorPage = lazy(() => import('./components/Calculators/App.jsx'));
+const ContactPage = lazy(() => import('./components/about/contact/App.jsx'));
+const GlossaryPage = lazy(() => import('./components/Resources/glossary/App'));
+const FAQPage = lazy(() => import('./components/Resources/FAQ/App'));
+const ApplyPage = lazy(() => import('./components/apply/App'));
+const DocPage = lazy(() => import('./components/Resources/documents/App'));
 
 // scroll to hash
 function useScrollToHash() {
@@ -28,13 +29,15 @@ function App() {
       <ScrollToHash />
       <Box>
         <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/calculators/*" element={<CalculatorPage />} />
-          <Route path="/contact-page" element={<ContactPage />} />
-          <Route path="/glossary-page" element={<GlossaryPage />} />
-          <Route path="/faq-page" element={<FAQPage />} />
-          <Route path="/apply-page" element={<ApplyPage />} />
-          <Route path="/doc-page" element={<DocPage />} />
+          <Suspense fallback={<Spinner />}>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/calculators/*" element={<CalculatorPage />} />
+            <Route path="/contact-page" element={<ContactPage />} />
+            <Route path="/glossary-page" element={<GlossaryPage />} />
+            <Route path="/faq-page" element={<FAQPage />} />
+            <Route path="/apply-page" element={<ApplyPage />} />
+            <Route path="/doc-page" element={<DocPage />} />
+          </Suspense>
         </Routes>
       </Box>
     </Router>
