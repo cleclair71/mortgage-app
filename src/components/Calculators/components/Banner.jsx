@@ -2,7 +2,6 @@ import React from 'react';
 import { VStack, Heading, Divider, Button as ChakraButton } from "@chakra-ui/react";
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import SpringButton from '../../theme/SpringButon';
 const MotionVStack = motion(VStack);
 
 const BannerContent = () => {

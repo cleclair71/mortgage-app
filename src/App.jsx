@@ -1,4 +1,4 @@
-import { Box, Spinner } from "@chakra-ui/react";
+import { Box, Spinner, Center } from "@chakra-ui/react";
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import { Suspense, useEffect, lazy } from "react";
 
@@ -23,21 +23,27 @@ function useScrollToHash() {
   }, [hash]);
 }
 
+function LoadableComponent(Component) {
+  return (
+    <Suspense fallback={<Center><Spinner /></Center>}>
+      <Component />
+    </Suspense>
+  )
+}
+
 function App() {
   return (
     <Router>
       <ScrollToHash />
       <Box>
         <Routes>
-          <Suspense fallback={<Spinner />}>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/calculators/*" element={<CalculatorPage />} />
-            <Route path="/contact-page" element={<ContactPage />} />
-            <Route path="/glossary-page" element={<GlossaryPage />} />
-            <Route path="/faq-page" element={<FAQPage />} />
-            <Route path="/apply-page" element={<ApplyPage />} />
-            <Route path="/doc-page" element={<DocPage />} />
-          </Suspense>
+          <Route path="/" element={LoadableComponent(MainPage)} />
+          <Route path="/calculators/*" element={LoadableComponent(CalculatorPage)} />
+          <Route path="/contact-page" element={LoadableComponent(ContactPage)} />
+          <Route path="/glossary-page" element={LoadableComponent(GlossaryPage)} />
+          <Route path="/faq-page" element={LoadableComponent(FAQPage)} />
+          <Route path="/apply-page" element={LoadableComponent(ApplyPage)} />
+          <Route path="/doc-page" element={LoadableComponent(DocPage)} />
         </Routes>
       </Box>
     </Router>
