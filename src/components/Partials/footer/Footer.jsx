@@ -10,7 +10,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { FaTwitter, FaYoutube, FaInstagram, FaFacebook } from 'react-icons/fa';
-
+import Newsletter from './Newsletter';
 // import AppStoreBadge from '@/components/AppStoreBadge';
 // import PlayStoreBadge from '@/components/PlayStoreBadge';
 
@@ -76,10 +76,8 @@ export default function LargeWithAppLinksAndSocial() {
           </Stack>
 
           <Stack align={'flex-start'}>
-            <ListHeader>Install App</ListHeader>
-            {/* <AppStoreBadge />
-            <PlayStoreBadge /> */}
-          </Stack>
+  <Newsletter />
+</Stack>
         </SimpleGrid>
       </Container>
 
