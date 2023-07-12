@@ -37,7 +37,7 @@ const MortgagePage = () => {
 
     return (
         <>
-            <Box bgImage={`url(${HeaderImage})`} bgSize="cover" bgPos="center" m="1rem" h="100vh"  w={{ base: "100vw", sm: "100vw", md: "100vw", lg: "100vw", xl: "100%", '2xl': "100%" }}>
+            <Box bgImage={`url(${HeaderImage})`} bgSize="cover" bgPos="center" m="1rem" h="80vh"  w={{ base: "100vw", sm: "100vw", md: "100vw", lg: "100vw", xl: "100%", '2xl': "100%" }}>
                 <Header />
                 <BannerContent />
             </Box>

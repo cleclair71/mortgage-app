@@ -53,18 +53,17 @@ export default function LargeWithAppLinksAndSocial() {
       <Container as={Stack} maxW={'6xl'} py={10}>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
           <Stack align={'flex-start'}>
-            <ListHeader>Company</ListHeader>
+            <ListHeader>Main Mortgage</ListHeader>
             <Link href={'#'}>About Us</Link>
-            <Link href={'#'}>Blog</Link>
-            <Link href={'#'}>Careers</Link>
             <Link href={'#'}>Contact Us</Link>
+            <Link href={'#'}>Why Choose a Mortgage Agent</Link>
           </Stack>
 
           <Stack align={'flex-start'}>
-            <ListHeader>Support</ListHeader>
-            <Link href={'#'}>Help Center</Link>
-            <Link href={'#'}>Safety Center</Link>
-            <Link href={'#'}>Community Guidelines</Link>
+            <ListHeader>Resources</ListHeader>
+            <Link href={'#'}>FAQ</Link>
+            <Link href={'#'}>Glossary</Link>
+            <Link href={'#'}>Documents You Need</Link>
           </Stack>
 
           <Stack align={'flex-start'}>
@@ -82,31 +81,39 @@ export default function LargeWithAppLinksAndSocial() {
       </Container>
 
       <Box
-        borderTopWidth={1}
-        borderStyle={'solid'}
-        borderColor={useColorModeValue('gray.200', 'gray.700')}>
-        <Container
-          as={Stack}
-          maxW={'6xl'}
-          py={4}
-          direction={{ base: 'column', md: 'row' }}
-          spacing={4}
-          justify={{ md: 'space-between' }}
-          align={{ md: 'center' }}>
-          <Text>© 2023 Main Mortgage. All rights reserved</Text>
-          <Stack direction={'row'} spacing={6}>
-            <SocialButton label={'Twitter'} href={'#'}>
-              <FaFacebook />
-            </SocialButton>
-            {/* <SocialButton label={'YouTube'} href={'#'}>
-              <FaYoutube />
-            </SocialButton> */}
-            <SocialButton label={'Instagram'} href={'#'}>
-              <FaInstagram />
-            </SocialButton>
-          </Stack>
-        </Container>
-      </Box>
+    borderTopWidth={1}
+    borderStyle={'solid'}
+    borderColor={useColorModeValue('gray.200', 'gray.700')}>
+    <Container
+      as={Stack}
+      maxW={'6xl'}
+      py={4}
+      direction={{ base: 'column', md: 'row' }}
+      spacing={4}
+      justify={{ md: 'space-between' }}
+      align={{ md: 'center' }}>
+      <Text fontSize="11">© 2023 <b>VERICO The Mortgage Professionals</b> License 10280 All Rights Reserved.
+*some restrictions may apply
+</Text>
+<Text fontSize="11">
+Powered by <a href="https://www.gomaxsolutions.com/" style={{fontWeight: 'bold'}}>GoMAX Solutions</a>.
+</Text>
+<Text fontSize="11">
+Website by <a href="https://www.linkedin.com/in/cassie-leclair-931093b6/" style={{fontWeight: 'bold'}}>Cassie LeClair</a>
+</Text>
+      <Stack direction={'row'} spacing={6}>
+        <SocialButton label={'Twitter'} href={'#'}>
+          <FaFacebook />
+        </SocialButton>
+        {/* <SocialButton label={'YouTube'} href={'#'}>
+          <FaYoutube />
+        </SocialButton> */}
+        <SocialButton label={'Instagram'} href={'#'}>
+          <FaInstagram />
+        </SocialButton>
+      </Stack>
+    </Container>
+  </Box>
     </Box>
   );
 }
