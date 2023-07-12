@@ -55,23 +55,23 @@ export default function LargeWithAppLinksAndSocial() {
           <Stack align={'flex-start'}>
             <ListHeader>Main Mortgage</ListHeader>
             <Link href={'#'}>About Us</Link>
-            <Link href={'#'}>Contact Us</Link>
+            <Link href={'/contact-page'}>Contact Us</Link>
             <Link href={'#'}>Why Choose a Mortgage Agent</Link>
           </Stack>
 
           <Stack align={'flex-start'}>
             <ListHeader>Resources</ListHeader>
-            <Link href={'#'}>FAQ</Link>
-            <Link href={'#'}>Glossary</Link>
-            <Link href={'#'}>Documents You Need</Link>
+            <Link href={'/faq-page'}>FAQ</Link>
+            <Link href={'/glossary-page'}>Glossary</Link>
+            <Link href={'/doc-page'}>Documents You Need</Link>
+            <Link href={'/apply-page'}>Apply Online</Link>
           </Stack>
 
           <Stack align={'flex-start'}>
             <ListHeader>Legal</ListHeader>
-            <Link href={'#'}>Cookies Policy</Link>
             <Link href={'#'}>Privacy Policy</Link>
             <Link href={'#'}>Terms of Service</Link>
-            <Link href={'#'}>Law Enforcement</Link>
+
           </Stack>
 
           <Stack align={'flex-start'}>
