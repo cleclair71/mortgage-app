@@ -46,11 +46,11 @@ export default function Header() {
               {name: 'Home Purchase', route: '/Mortgages/home-purchase'},
               {name: 'Refinance', route: '/Mortgages/refinance'},
               {name: 'Renewal', route: '/Mortgages/renewing'},
-              {name: 'Second Mortgage', route: '/Mortgages/second-mortgage'},
-              {name: 'Commercial Mortgage', route: '/Mortgages/commercial-mortgage'},
-              {name: 'Debt Consolidation', route: '/Mortgages/debt'},
-              {name: 'Home Equity Mortgage', route: '/Mortgages/equity'},
-                {name: 'Private Mortgage', route: '/Mortgages/private'},
+              {name: 'Building/Construction', route: '/Mortgages/building'},
+              // {name: 'Commercial Mortgage', route: '/Mortgages/commercial-mortgage'},
+              // {name: 'Debt Consolidation', route: '/Mortgages/debt'},
+              // {name: 'Home Equity Mortgage', route: '/Mortgages/equity'},
+              //   {name: 'Private Mortgage', route: '/Mortgages/private'},
               // Add all your routes
             ]}/>
            <NavItem title="Calculators" routes={[
@@ -83,11 +83,11 @@ export default function Header() {
               {name: 'Home Purchase', route: '/Mortgages/home-purchase'},
               {name: 'Refinance', route: '/Mortgages/refinance'},
               {name: 'Renewal', route: '/Mortgages/renewing'},
-              {name: 'Second Mortgage', route: '/Mortgages/second-mortgage'},
-              {name: 'Commercial Mortgage', route: '/Mortgages/commercial'},
-              {name: 'Debt Consolidation', route: '/Mortgages/debt'},
-              {name: 'Home Equity Mortgage', route: '/Mortgages/equity'},
-                {name: 'Private Mortgage', route: '/Mortgages/private'},
+              {name: 'Building/Construction', route: '/Mortgages/building'},
+              // {name: 'Commercial Mortgage', route: '/Mortgages/commercial'},
+              // {name: 'Debt Consolidation', route: '/Mortgages/debt'},
+              // {name: 'Home Equity Mortgage', route: '/Mortgages/equity'},
+              //   {name: 'Private Mortgage', route: '/Mortgages/private'},
               // Add all your routes
             ]}/>
            <NavItem title="Calculators" routes={[

@@ -25,25 +25,28 @@ import { GiFingerPrint, GiBank, GiIdCard } from "react-icons/gi"; // import the 
 
 const HomePurchase = () => {
     const iconSize = useBreakpointValue({ base: "60", md: "120", lg:"180" }); // size of icon depending on breakpoint
+    const iconDisplay = useBreakpointValue({ base: "none", md: "none", lg: "block" }); // display property depending on breakpoint
 
     return (
-        <Box p={4}>
+        <Box p={4} flexDirection="column">
             <Heading size="md" mb={6} mx="2em">Navigating the Mortgage Process for Home Buyers</Heading>
             <Text mb={6} mx="3em">
                 At Main Mortgage, we understand that buying a home involves a multitude of options and considerations. Whether you're a first-time home buyer, looking to purchase your primary residence, interested in buying a rental property, seeking a cottage or second home, considering purchase, improvements, and renovations, or new to Canada, we are here to guide you every step of the way.
             </Text>
             {/* 3 icons inserted here */}
-            <Grid templateColumns={"repeat(3, 1fr)"} gap={4} justifyContent="center">
-                <Circle size={iconSize} bg="gray.100" boxShadow="md">
-                    <GiFingerPrint size="80%" minWidth="30px"/>
-                </Circle>
-                <Circle size={iconSize} bg="gray.100" boxShadow="md">
-                    <GiBank size="70%" />
-                </Circle>
-                <Circle size={iconSize} bg="gray.100" boxShadow="md">
-                    <GiIdCard size="70%" />
-                </Circle>
-            </Grid>
+            <Box display={iconDisplay}>
+                <Grid templateColumns={"repeat(3, 1fr)"} gap={4} justifyContent="center" mx="auto" p={5} alignItems="center" pb="3em">
+                    <Circle size={iconSize} bg="gray.100" boxShadow="md">
+                        <GiFingerPrint size="80%" minWidth="30px"/>
+                    </Circle>
+                    <Circle size={iconSize} bg="gray.100" boxShadow="md">
+                        <GiBank size="70%" />
+                    </Circle>
+                    <Circle size={iconSize} bg="gray.100" boxShadow="md">
+                        <GiIdCard size="70%" />
+                    </Circle>
+                </Grid>
+            </Box>
             <Box
                 flex="1"
                 position="relative"
