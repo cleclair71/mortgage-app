@@ -1,19 +1,21 @@
 import React from 'react';
+import { Helmet } from "react-helmet";
 import Header from '../Main/header/Header';
-// import BannerContent from './Banner';
 import Apply from './Apply';
-
 import Footer from '../Partials/footer/Footer';
-
 import { Box, VStack } from "@chakra-ui/react";
 import HeaderImage from '../../assets/ficus.png';
 
 const ApplyPage = () => {
     return (
         <>
+            <Helmet>
+                <title>Apply for a Mortgage Today | Main Mortgage</title>
+                <meta name="description" content="Apply for a mortgage with Main Mortgage. Our mortgage agent, Dora Main, will guide you through the process and answer any questions you have about home loans, interest rates, refinancing, and more." />
+                <meta name="keywords" content="Mortgage application, Apply for mortgage, Main Mortgage, Dora Main, Home loan, Mortgage rates, Refinancing, Home purchase, Building home, Mortgage renewing, Switching mortgage, Canada, Mortgage procedure, Interest rates, Down payment, House building" />
+            </Helmet>
             <Box bgImage={`url(${HeaderImage})`} bgSize="cover" bgPos="center" m="1rem" h="50vh">
                 <Header />
-                {/* <BannerContent /> */}
             </Box>
             <Box
                 pb="5em"
