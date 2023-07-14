@@ -13,11 +13,13 @@ import {
   useDisclosure,
   useColorModeValue,
   Stack,
+  Image
  
 } from '@chakra-ui/react';
 import { ChevronDownIcon, HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { Link as RouterLink } from 'react-router-dom';
 import SpringButton from '../../../theme/SpringButon';
+import LogoImage from '../../../assets/1.png';
 
 export default function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -33,8 +35,9 @@ export default function Header() {
           onClick={isOpen ? onClose : onOpen}
         />
         <HStack spacing={8} alignItems={'center'}>
-        <Link as={RouterLink} to="/" _hover={{ textDecoration: 'none' }}>
-            <Box>LOGO</Box>
+        <Link as={RouterLink} to="/" _hover={{ boxShadow="5px" }}>
+            <Image h='100px' pt="2em"
+    objectFit='cover' src={LogoImage} alt="Logo" /> {/* Use the Image component here */}
           </Link>
           <HStack
             as={'nav'}
@@ -47,20 +50,16 @@ export default function Header() {
               {name: 'Refinance', route: '/Mortgages/refinance'},
               {name: 'Renewal', route: '/Mortgages/renewing'},
               {name: 'Building/Construction', route: '/Mortgages/building'},
-              // {name: 'Commercial Mortgage', route: '/Mortgages/commercial-mortgage'},
-              // {name: 'Debt Consolidation', route: '/Mortgages/debt'},
-              // {name: 'Home Equity Mortgage', route: '/Mortgages/equity'},
-              //   {name: 'Private Mortgage', route: '/Mortgages/private'},
-              // Add all your routes
+
             ]}/>
            <NavItem title="Calculators" routes={[
   {name: 'Affordability Calculator', route: '/calculators/affordability'},
   {name: 'Payment Calculator', route: '/calculators/payment'},
   {name: 'CMHC Calculator', route: '/calculators/cmhc'},
   {name: 'Land Transfer Tax Calculator', route: '/calculators/transfer'},
-  {name: 'Renewal Calculator', route: '/calculators/renewal'},
+  {name: 'Renewal Calculator', route: '/calculators/renewal'}
 ]}/>
-            {/* <Link as={RouterLink} to="/rates" px={2} py={1} rounded={'md'}>Rates</Link> */}
+
             <NavItem title="About" routes={[
               {name: 'About Us', route: '/about-us'},
               {name: 'Contact Dora', route: '/contact-page'},
@@ -84,11 +83,7 @@ export default function Header() {
               {name: 'Refinance', route: '/Mortgages/refinance'},
               {name: 'Renewal', route: '/Mortgages/renewing'},
               {name: 'Building/Construction', route: '/Mortgages/building'},
-              // {name: 'Commercial Mortgage', route: '/Mortgages/commercial'},
-              // {name: 'Debt Consolidation', route: '/Mortgages/debt'},
-              // {name: 'Home Equity Mortgage', route: '/Mortgages/equity'},
-              //   {name: 'Private Mortgage', route: '/Mortgages/private'},
-              // Add all your routes
+
             ]}/>
            <NavItem title="Calculators" routes={[
   {name: 'Affordability Calculator', route: '/calculators/affordability'},
@@ -97,7 +92,7 @@ export default function Header() {
   {name: 'Land Transfer Tax Calculator', route: '/calculators/transfer'},
   {name: 'Renewal Calculator', route: '/calculators/renewal'},
 ]}/>
-            {/* <Link as={RouterLink} to="/rates" px={2} py={1} rounded={'md'}>Rates</Link> */}
+
             <NavItem title="About" routes={[
               {name: 'About Us', route: '/about-us'},
               {name: 'Contact Us', route: '/contact-us'},
