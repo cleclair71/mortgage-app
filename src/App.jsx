@@ -2,7 +2,7 @@ import { Box, Spinner, Center } from "@chakra-ui/react";
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import { Suspense, useEffect, lazy } from "react";
 
-
+const AboutPage = lazy(() => import('./components/about/aboutUs/App'));
 const MainPage = lazy(() => import('./components/Main/App'));
 const ContactPage = lazy(() => import('./components/about/contact/App.jsx'));
 const GlossaryPage = lazy(() => import('./components/Resources/glossary/App'));
@@ -53,6 +53,7 @@ function App() {
           <Route path="/doc-page" element={LoadableComponent(DocPage)} />
           <Route path="/Mortgages/*" element={LoadableComponent(MortgagePage)} />
           <Route path="/application-page" element={LoadableComponent(ApplicationPage)} />
+          <Route path="/about-page" element={LoadableComponent(AboutPage)} />
         </Routes>
       </Box>
     </Router>
