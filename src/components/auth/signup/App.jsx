@@ -1,12 +1,13 @@
 import React from 'react';
 import { Helmet } from "react-helmet";
-import Header from '../Main/header/Header';
-import Apply from './Apply';
-import Footer from '../Partials/footer/Footer';
-import { Box, VStack } from "@chakra-ui/react";
-import HeaderImage from '../../assets/ficus.png';
+import Header from '../../Main/header/Header';
 
-const ApplyPage = () => {
+import Footer from '../../Partials/footer/Footer';
+import { Box, VStack } from "@chakra-ui/react";
+import HeaderImage from '../../../assets/ficus.png';
+import SignUp from './SignUp';
+
+const SignUpPage = () => {
     return (
         <>
             <Helmet>
@@ -29,7 +30,7 @@ const ApplyPage = () => {
                 mb="5em"
             >
             <VStack pb="5">
-                <Apply />
+                <SignUp />
                 
             </VStack>
             </Box>
@@ -38,4 +39,4 @@ const ApplyPage = () => {
     )
 }
 
-export default ApplyPage;
+export default SignUpPage;

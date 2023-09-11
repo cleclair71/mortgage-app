@@ -2,14 +2,19 @@ import { Box, Spinner, Center } from "@chakra-ui/react";
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import { Suspense, useEffect, lazy } from "react";
 
+
 const MainPage = lazy(() => import('./components/Main/App'));
 const ContactPage = lazy(() => import('./components/about/contact/App.jsx'));
 const GlossaryPage = lazy(() => import('./components/Resources/glossary/App'));
 const FAQPage = lazy(() => import('./components/Resources/FAQ/App'));
-const ApplyPage = lazy(() => import('./components/apply/App'));
+
 const DocPage = lazy(() => import('./components/Resources/documents/App'));
 const MortgagePage = lazy(() => import('./components/Mortgages/App'));
+// const ApplicationPage = lazy(() => import('./components/application/App'));
+const SignInPage = lazy(() => import('./components/auth/signin/App'));
+// const SignUpPage = lazy(() => import('./components/auth/SignUp'));
 const ApplicationPage = lazy(() => import('./components/application/App'));
+const SignUpPage = lazy(() => import('./components/auth/signup/App'));
 
 
 // scroll to hash
@@ -43,7 +48,8 @@ function App() {
           <Route path="/contact-page" element={LoadableComponent(ContactPage)} />
           <Route path="/glossary-page" element={LoadableComponent(GlossaryPage)} />
           <Route path="/faq-page" element={LoadableComponent(FAQPage)} />
-          <Route path="/apply-page" element={LoadableComponent(ApplyPage)} />
+          <Route path="/sign-in" element={LoadableComponent(SignInPage)} />
+          <Route path="/sign-up" element={LoadableComponent(SignUpPage)} />
           <Route path="/doc-page" element={LoadableComponent(DocPage)} />
           <Route path="/Mortgages/*" element={LoadableComponent(MortgagePage)} />
           <Route path="/application-page" element={LoadableComponent(ApplicationPage)} />
