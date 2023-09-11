@@ -1,6 +1,7 @@
 import React  from 'react';
 import { Box, Grid, Input, Text, Divider, Heading, VStack, Stack, useColorModeValue } from '@chakra-ui/react';
-import { FiMapPin, FiPhone, FiMail } from 'react-icons/fi';
+import { FiMapPin, FiPhone } from 'react-icons/fi';
+import { MdFax } from 'react-icons/md';
 import SpringButton from '../../../theme/SpringButon';
 import { useSpring, animated } from 'react-spring';
 
@@ -13,9 +14,9 @@ const Contact = () => {
   });
 
   const infoCards = [
-    { title: 'Address', icon: FiMapPin, content: '123 Street, City, State, ZIP' },
-    { title: 'Phone', icon: FiPhone, content: '+1 (123) 456-7890' },
-    { title: 'Email', icon: FiMail, content: 'email@example.com' }
+    { title: 'Address', icon: FiMapPin, content: '77 Pine Street, Gananoque, ON, K7G-2W3' },
+    { title: 'Phone', icon: FiPhone, content: '+1 (613) 583-3672' },
+    { title: 'Fax', icon: MdFax, content: '(613) 382-3760' }
   ];
 
   const [hovered, setHovered] = React.useState(false);

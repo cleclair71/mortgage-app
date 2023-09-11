@@ -55,7 +55,7 @@ export default function Header() {
            
 
             <NavItem title="About" routes={[
-              {name: 'About Us', route: '/about-us'},
+              {name: 'About Us', route: '/about-page'},
               {name: 'Contact Dora', route: '/contact-page'},
               // Add all your routes
             ]}/>
@@ -82,8 +82,8 @@ export default function Header() {
            
 
             <NavItem title="About" routes={[
-              {name: 'About Us', route: '/about-us'},
-              {name: 'Contact Us', route: '/contact-us'},
+              {name: 'About Us', route: '/about-page'},
+              {name: 'Contact Us', route: '/contact-page'},
               // Add all your routes
             ]}/>
             <NavItem title="Resources" routes={[
