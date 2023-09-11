@@ -35,7 +35,7 @@ export default function Header() {
           onClick={isOpen ? onClose : onOpen}
         />
         <HStack spacing={8} alignItems={'center'}>
-        <Link as={RouterLink} to="/" _hover={{ boxShadow="5px" }}>
+        <Link as={RouterLink} to="/" _hover={{ boxShadow:"5px" }}>
             <Image h='100px' pt="2em"
     objectFit='cover' src={LogoImage} alt="Logo" /> {/* Use the Image component here */}
           </Link>
@@ -52,13 +52,7 @@ export default function Header() {
               {name: 'Building/Construction', route: '/Mortgages/building'},
 
             ]}/>
-           <NavItem title="Calculators" routes={[
-  {name: 'Affordability Calculator', route: '/calculators/affordability'},
-  {name: 'Payment Calculator', route: '/calculators/payment'},
-  {name: 'CMHC Calculator', route: '/calculators/cmhc'},
-  {name: 'Land Transfer Tax Calculator', route: '/calculators/transfer'},
-  {name: 'Renewal Calculator', route: '/calculators/renewal'}
-]}/>
+           
 
             <NavItem title="About" routes={[
               {name: 'About Us', route: '/about-us'},
@@ -85,13 +79,7 @@ export default function Header() {
               {name: 'Building/Construction', route: '/Mortgages/building'},
 
             ]}/>
-           <NavItem title="Calculators" routes={[
-  {name: 'Affordability Calculator', route: '/calculators/affordability'},
-  {name: 'Payment Calculator', route: '/calculators/payment'},
-  {name: 'CMHC Calculator', route: '/calculators/cmhc'},
-  {name: 'Land Transfer Tax Calculator', route: '/calculators/transfer'},
-  {name: 'Renewal Calculator', route: '/calculators/renewal'},
-]}/>
+           
 
             <NavItem title="About" routes={[
               {name: 'About Us', route: '/about-us'},
