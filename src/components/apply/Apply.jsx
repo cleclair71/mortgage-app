@@ -6,12 +6,12 @@ import { Link as RouterLink } from 'react-router-dom';
 import SpringButton from '../../theme/SpringButon'; // import this from your actual file path
 
 const Apply = () => {
-    const color = useColorModeValue("custom.text", "custom.Text");
+  const color = useColorModeValue("custom.text", "custom.Text");
   return (
     <Box p={4}>
       <VStack spacing={8} align="start">
-        <Heading as="h1" size="2xl" mt="40px" fontSize="2.5rem" color={color} textDecoration="none" opacity="0.6" _hover={{opacity: "1"}}>
-        Let's get you started on your application
+        <Heading as="h1" size="2xl" mt="40px" fontSize="2.5rem" color={color} textDecoration="none" opacity="0.6" _hover={{ opacity: "1" }}>
+          Let's get you started on your application
         </Heading>
         <Divider w="15%" borderColor={color} mt="30px" mb="30px" />
         <Text fontSize="xl" fontWeight="bold">
@@ -28,25 +28,23 @@ const Apply = () => {
           <li>You review and sign the necessary documentation with a legal professional conveniently located in your area.</li>
           <li>Your mortgage is funded.</li>
         </ol>
-        <SpringButton variant="outline">
-          <Link href="https://www.secure-application.net/apply/?hid=d36550fc4422fde2c3bb4169c939e24e583e79f0" isExternal>
-            Apply Now
-          </Link>
-        </SpringButton>
+        <RouterLink to="/application-page">
+          <SpringButton mt="5">Apply Now</SpringButton>
+        </RouterLink>
         <Text fontSize="sm">Clicking "Apply online" will transfer you to our secure server.</Text>
         <Text>If you prefer, you can print our mortgage application to fax or email it to our toll free fax number provided on the application. (Note: Faxed applications do not qualify for instant mortgage or pre approvals.)</Text>
         <SpringButton variant="outline">Download Application</SpringButton>
       </VStack>
 
-      <Box 
-        flex="1" 
-        position="sticky" 
-        top="0" 
-        maxHeight="90vh" 
+      <Box
+        flex="1"
+        position="sticky"
+        top="0"
+        maxHeight="90vh"
         minWidth="200px"
         overflowY="auto"
-        ml={[5, 2]} 
-        mt={[10, 5]} 
+        ml={[5, 2]}
+        mt={[10, 5]}
         p={5}
         bg="gray.100"
         borderRadius="md"
@@ -54,20 +52,20 @@ const Apply = () => {
       >
         <Heading size="md" mb={3}>Resources</Heading>
         <VStack align="start" spacing={2}>
-          <Box 
-            p={3} 
-            bg="white" 
-            width="100%" 
-            borderRadius="md" 
+          <Box
+            p={3}
+            bg="white"
+            width="100%"
+            borderRadius="md"
             boxShadow="sm"
           >
             <Link as={RouterLink} to="/glossary-page">Glossary</Link>
           </Box>
-          <Box 
-            p={3} 
-            bg="white" 
-            width="100%" 
-            borderRadius="md" 
+          <Box
+            p={3}
+            bg="white"
+            width="100%"
+            borderRadius="md"
             boxShadow="sm"
           >
             <Link as={RouterLink} to="/faq-page">Frequently Asked Questions</Link>
