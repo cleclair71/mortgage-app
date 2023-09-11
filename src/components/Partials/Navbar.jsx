@@ -73,7 +73,7 @@ import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { Link as RouterLink } from "react-router-dom";
 
 const Links = ['Mortgages', 'Rates', 'About', 'Apply Now'];
-const paths = ['/mortgages', '/rates', '/about', '/apply'];
+const paths = ['/mortgages', '/rates', '/about', '/sign-in'];
 
 const NavLink = ({ children, path }) => (
   <Link as={RouterLink} to={path}

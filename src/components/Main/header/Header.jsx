@@ -67,7 +67,7 @@ export default function Header() {
             ]}/>
           </HStack>
         </HStack>
-        <SpringButton as={RouterLink} to="/apply-page" variant='outline'  size={'sm'}>Apply Now</SpringButton>
+        <SpringButton as={RouterLink} to="/sign-in" variant='outline'  size={'sm'}>Apply Now</SpringButton>
       </Flex>
       {isOpen ? (
         <Box pb={4} display={{ md: 'none' }}>
