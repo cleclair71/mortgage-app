@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from "react-route
 import { Suspense, useEffect, lazy } from "react";
 
 const MainPage = lazy(() => import('./components/Main/App'));
-const CalculatorPage = lazy(() => import('./components/Calculators/App.jsx'));
 const ContactPage = lazy(() => import('./components/about/contact/App.jsx'));
 const GlossaryPage = lazy(() => import('./components/Resources/glossary/App'));
 const FAQPage = lazy(() => import('./components/Resources/FAQ/App'));
@@ -39,7 +38,6 @@ function App() {
       <Box>
         <Routes>
           <Route path="/" element={LoadableComponent(MainPage)} />
-          <Route path="/calculators/*" element={LoadableComponent(CalculatorPage)} />
           <Route path="/contact-page" element={LoadableComponent(ContactPage)} />
           <Route path="/glossary-page" element={LoadableComponent(GlossaryPage)} />
           <Route path="/faq-page" element={LoadableComponent(FAQPage)} />

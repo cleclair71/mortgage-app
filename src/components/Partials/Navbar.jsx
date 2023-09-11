@@ -72,8 +72,8 @@ import { Box, Flex, HStack, Link, IconButton, useDisclosure, useColorModeValue, 
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { Link as RouterLink } from "react-router-dom";
 
-const Links = ['Mortgages', 'Calculators', 'Rates', 'About', 'Apply Now'];
-const paths = ['/mortgages', '/calculators', '/rates', '/about', '/apply'];
+const Links = ['Mortgages', 'Rates', 'About', 'Apply Now'];
+const paths = ['/mortgages', '/rates', '/about', '/apply'];
 
 const NavLink = ({ children, path }) => (
   <Link as={RouterLink} to={path}
