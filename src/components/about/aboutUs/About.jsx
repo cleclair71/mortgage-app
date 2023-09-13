@@ -26,7 +26,7 @@ const AboutUs = () => (
                 <Heading as="h1" size="2xl" color="green.500" mb={5}>
                     Our Mission 
                 </Heading>
-                <Text>
+                <Text >
                     While obtaining a mortgage can sometimes be daunting and complicated, it is our mission at VERICO The Mortgage Professionals to provide you, our client, a quick, easy and understandable way to getting a mortgage loan.
                     By shopping the mortgage market using our proprietary technology, an answer to your mortgage application is almost instantaneous. We are the first company in Canada to offer this type of online service.
                     VERICO The Mortgage Professionals believes that mortgage approvals should be available 24/7 and we are dedicated to saving our clients time and money by eliminating the need to shop multiple lenders. Our online application process is completely free, secure, and without obligation.
@@ -35,10 +35,10 @@ const AboutUs = () => (
                 </Text>
             </Box>
             <Box>
-                <Image src={DoraImg} alt="Description" />
+                <Image src={DoraImg} alt="Description" mx="auto"/>
             </Box>
             <Box>
-        <Image src={DoraImg} alt="Dora" />
+        <Image src={DoraImg} mx="auto" alt="Dora" />
       </Box>
       <Box>
       <Heading as="h1" size="2xl" color="green.500" mb={5}>
@@ -62,7 +62,7 @@ const AboutUs = () => (
         </Text>
       </Box>
       <Box>
-        <Image src={MtgImg} alt="MTG" />
+        <Image src={MtgImg} borderRadius={"50px"} maxWidth="360px" alt="MTG" mx="auto"/>
       </Box>
     </Grid>
   </Box>
