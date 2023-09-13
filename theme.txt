@@ -29,3 +29,15 @@ background dark - #d8ddd7
 |   |-- Glossary
 |   |-- Why use us?
 |-- Apply Now
+
+$butterscotch: rgba(229, 146, 64, 1);
+$linen: rgba(250, 241, 231, 1);
+$caribbean-current: rgba(40, 97, 104, 1);
+$gunmetal: rgba(15, 37, 50, 1);
+$dark-cyan: rgba(72, 135, 135, 1);
+
+--butterscotch: #E59240ff;
+--linen: #FAF1E7ff;
+--caribbean-current: #286168ff;
+--gunmetal: #0F2532ff;
+--dark-cyan: #488787ff;

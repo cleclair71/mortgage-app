@@ -6,7 +6,7 @@ import About from './About';
 import Footer from '../Partials/footer/Footer';
 import BannerContent from './Banner';
 import { Box, VStack } from "@chakra-ui/react";
-import HeaderImage from '../../assets/ficus.png';
+import HeaderImage from '../../assets/homeH.jpg';
 
 const MainPage = () => {
     return (
@@ -19,8 +19,9 @@ const MainPage = () => {
                 <meta property="og:title" content="Dora Main AMP | Mortgage Agent | Main Mortgage & Mortgage Professionals Kingston" />
                 <meta property="og:description" content="Dora Main AMP is a trusted mortgage agent at Main Mortgage & Mortgage Professionals Kingston in Gananoque, Ontario. We offer personalized home loan solutions, refinancing options, and expert mortgage advice. Contact Dora Main AMP today for your mortgage needs." />
             </Helmet>
-            <Box bgImage={`url(${HeaderImage})`} bgSize="cover" bgPos="center" m="1rem" h="100vh">
-                <Header />
+            <Header />
+            <Box bgImage={`url(${HeaderImage})`} bgSize="cover" bgPos="top" m="2rem" h="85vh">
+                
                 <BannerContent />
             </Box>
             <VStack pb="5">
