@@ -63,7 +63,7 @@ const HomePurchase = () => {
 
                 <Accordion minWidth="100%" defaultIndex={[0]} allowMultiple>
                     <AccordionItem>
-                        <AccordionButton _expanded={{ bg: 'green', color: 'white' }}>
+                        <AccordionButton _expanded={{ bg: '#176572', color: 'white' }}>
                             <Box flex="1" textAlign="left">
                                 <Heading size="md">First-time Home Buyers</Heading>
                             </Box>
@@ -127,7 +127,7 @@ const HomePurchase = () => {
                         </AccordionPanel>
                     </AccordionItem>
                     <AccordionItem>
-                        <AccordionButton _expanded={{ bg: 'green', color: 'white' }}>
+                        <AccordionButton _expanded={{ bg: '#176572', color: 'white' }}>
                             <Box flex="1" textAlign="left">
                                 <Heading size="md">Purchasing Your Primary Home</Heading>
                             </Box>
@@ -154,7 +154,7 @@ const HomePurchase = () => {
 
                     {/* New Section: Buying a Rental Property */}
                     <AccordionItem>
-                        <AccordionButton _expanded={{ bg: 'green', color: 'white' }}>
+                        <AccordionButton _expanded={{ bg: '#176572', color: 'white' }}>
                             <Box flex="1" textAlign="left">
                                 <Heading size="md">Buying a Rental Property</Heading>
                             </Box>
@@ -168,7 +168,7 @@ const HomePurchase = () => {
                     </AccordionItem>
                     {/* New Section: Cottage */}
                     <AccordionItem>
-                        <AccordionButton _expanded={{ bg: 'green', color: 'white' }}>
+                        <AccordionButton _expanded={{ bg: '#176572', color: 'white' }}>
                             <Box flex="1" textAlign="left">
                                 <Heading size="md">Purchasing a Cottage/Second Home</Heading>
                             </Box>
@@ -273,7 +273,7 @@ const HomePurchase = () => {
                     {/* renos */}
 
                     <AccordionItem>
-                        <AccordionButton _expanded={{ bg: 'green', color: 'white' }}>
+                        <AccordionButton _expanded={{ bg: '#176572', color: 'white' }}>
                             <Box flex="1" textAlign="left">
                                 <Heading size="md">Purchase, Improvements and Renovations</Heading>
                             </Box>
@@ -354,7 +354,7 @@ const HomePurchase = () => {
 
                     {/* New to Canada */}
                     <AccordionItem>
-                        <AccordionButton _expanded={{ bg: 'green', color: 'white' }}>
+                        <AccordionButton _expanded={{ bg: '#176572', color: 'white' }}>
                             <Box flex="1" textAlign="left">
                                 <Heading size="md">New to Canada</Heading>
                             </Box>
@@ -379,7 +379,7 @@ const HomePurchase = () => {
 
 
                     <AccordionItem>
-                        <AccordionButton _expanded={{ bg: 'green', color: 'white' }}>
+                        <AccordionButton _expanded={{ bg: '#176572', color: 'white' }}>
                             <Box flex="1" textAlign="left">
                                 <Heading size="md">Military/Employer Relocation</Heading>
                             </Box>

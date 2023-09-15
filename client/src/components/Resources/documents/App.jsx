@@ -16,8 +16,9 @@ const DocPage = () => {
                 <meta name="keywords" content="most recent pay stubs, T1 general tax form, Notice of assessment, T4 tax form, Letter of employment, Credit score, Mortgage pre-approval letter, Bank statements, List of assets and investments, Statement of savings or investments, Sale agreement of existing property, RRSP withdrawals, Gift letter, Final purchase and sale agreement, MLS Listing, Legal description of the home, Homeowners insurance policy, Lenders' title insurance" />
                 <meta name="robots" content="index, follow" />
             </Helmet>
-            <Box bgImage={`url(${HeaderImage})`} bgSize="cover" bgPos="center" m="1rem" h="100vh">
-                <Header />
+            <Header />
+            <Box bgImage={`url(${HeaderImage})`} bgSize="cover" bgPos="center" m="2rem" h="100vh">
+                
                 <BannerContent />
             </Box>
             <Box
@@ -25,7 +26,7 @@ const DocPage = () => {
                 w={{ base: "100%", sm: "100%", md: "80%" }}
                 mx={{ base: "0", sm: "0", md: "auto" }}
                 bgColor="white"
-                mt="-16em"
+                mt="-25em"
                 p="2em"
                 borderRadius="md"
                 boxShadow="0 0 10px rgba(0,0,0,0.2)"

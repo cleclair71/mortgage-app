@@ -4,7 +4,7 @@ import AboutUs from './About';
 import Footer from '../../Partials/footer/Footer';
 import BannerContent from './Banner';
 import { Box, VStack } from "@chakra-ui/react";
-import HeaderImage from '../../../assets/ficus.png';
+import HeaderImage from '../../../assets/homeA.jpg';
 import { Helmet } from "react-helmet";
 
 const AboutPage = () => {
@@ -16,8 +16,9 @@ const AboutPage = () => {
                 <meta name="keywords" content="most recent pay stubs, T1 general tax form, Notice of assessment, T4 tax form, Letter of employment, Credit score, Mortgage pre-approval letter, Bank statements, List of assets and investments, Statement of savings or investments, Sale agreement of existing property, RRSP withdrawals, Gift letter, Final purchase and sale agreement, MLS Listing, Legal description of the home, Homeowners insurance policy, Lenders' title insurance" />
                 <meta name="robots" content="index, follow" />
             </Helmet>
-            <Box bgImage={`url(${HeaderImage})`} bgSize="cover" bgPos="center" m="1rem" h="100vh">
-                <Header />
+            <Header />
+            <Box bgImage={`url(${HeaderImage})`} bgSize="cover" bgPos="center" m="2rem" h="100vh">
+               
                 <BannerContent />
             </Box>
             <Box

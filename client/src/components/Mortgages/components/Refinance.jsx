@@ -36,7 +36,7 @@ const Refinance = () => {
 
                 <Accordion minWidth="100%" defaultIndex={[0]} allowMultiple>
                     <AccordionItem>
-                        <AccordionButton _expanded={{ bg: 'green', color: 'white' }}>
+                        <AccordionButton _expanded={{ bg: '#176572', color: 'white' }}>
                             <Box flex="1" textAlign="left">
                                 <Heading size="md">What is Mortgage Refinancing?</Heading>
                             </Box>
@@ -50,7 +50,7 @@ const Refinance = () => {
                     </AccordionItem>
 
                     <AccordionItem>
-                        <AccordionButton _expanded={{ bg: 'green', color: 'white' }}>
+                        <AccordionButton _expanded={{ bg: '#176572', color: 'white' }}>
                             <Box flex="1" textAlign="left">
                                 <Heading size="md">Debt Consolidation</Heading>
                             </Box>
@@ -64,7 +64,7 @@ const Refinance = () => {
                     </AccordionItem>
 
                     <AccordionItem>
-                        <AccordionButton _expanded={{ bg: 'green', color: 'white' }}>
+                        <AccordionButton _expanded={{ bg: '#176572', color: 'white' }}>
                             <Box flex="1" textAlign="left">
                                 <Heading size="md">Considerations and Prepayment Penalties</Heading>
                             </Box>

@@ -35,7 +35,7 @@ const Building = () => {
 
                 <Accordion minWidth="100%" defaultIndex={[0]} allowMultiple>
                     <AccordionItem>
-                        <AccordionButton _expanded={{ bg: 'green', color: 'white' }}>
+                        <AccordionButton _expanded={{ bg: '#176572', color: 'white' }}>
                             <Box flex="1" textAlign="left">
                                 <Heading size="md">Construction Mortgages</Heading>
                             </Box>
@@ -49,7 +49,7 @@ const Building = () => {
                     </AccordionItem>
 
                     <AccordionItem>
-                        <AccordionButton _expanded={{ bg: 'green', color: 'white' }}>
+                        <AccordionButton _expanded={{ bg: '#176572', color: 'white' }}>
                             <Box flex="1" textAlign="left">
                                 <Heading size="md">Builder/Contractor vs. Self-Build</Heading>
                             </Box>
@@ -63,7 +63,7 @@ const Building = () => {
                     </AccordionItem>
 
                     <AccordionItem>
-                        <AccordionButton _expanded={{ bg: 'green', color: 'white' }}>
+                        <AccordionButton _expanded={{ bg: '#176572', color: 'white' }}>
                             <Box flex="1" textAlign="left">
                                 <Heading size="md">Understanding Your Options</Heading>
                             </Box>
