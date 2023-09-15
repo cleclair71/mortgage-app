@@ -5,7 +5,7 @@ import { Box, VStack, Tabs } from "@chakra-ui/react";
 import Header from '../Main/header/Header';
 import Footer from '../Partials/footer/Footer';
 import BannerContent from './components/Banner';
-import HeaderImage from '../../assets/pexels-melike-benli-10093329.jpg';
+import HeaderImage from '../../assets/homeG.jpg';
 import MortgageTabList from './components/TabList';
 import MortgageRoutes from './MortgageRoutes';
 import LoadableComponent from '../../utils/LoadableComponent';
@@ -35,8 +35,9 @@ const MortgagePage = () => {
                 <meta name="description" content="Get comprehensive information about mortgages, home purchase, home building, refinancing, and mortgage renewing. Perfect for first-time home buyers and those seeking to understand mortgage procedures in Canada." />
                 <meta name="keywords" content="Mortgage, Home purchase, Building home, Refinancing, Mortgage renewing, First time home buyer, Canada, Mortgage rates, Home buying, Mortgage procedure, Home loan, Property loan, Switching mortgage, Mortgage incentive, Interest rates, Down payment, House building" />
             </Helmet>
-            <Box bgImage={`url(${HeaderImage})`} bgSize="cover" bgPos="center" m="1rem" h="80vh"  w={{ base: "100vw", sm: "100vw", md: "100vw", lg: "100vw", xl: "100%", '2xl': "100%" }}>
-                <Header />
+            <Header />
+            <Box bgImage={`url(${HeaderImage})`} bgSize="cover" bgPos="top" m="2rem" h="80vh"  >
+                
                 <BannerContent />
             </Box>
             <Box
@@ -63,5 +64,4 @@ const MortgagePage = () => {
         </>
     )
 }
-
 export default MortgagePage;

@@ -23,7 +23,7 @@ const AboutUs = () => (
         >
             {/* First Row */}
             <Box>
-                <Heading as="h1" size="2xl" color="green.500" mb={5}>
+                <Heading as="h1" size="2xl" color="#176572" mb={5}>
                     Our Mission 
                 </Heading>
                 <Text >
@@ -41,7 +41,7 @@ const AboutUs = () => (
         <Image src={DoraImg} mx="auto" alt="Dora" />
       </Box>
       <Box>
-      <Heading as="h1" size="2xl" color="green.500" mb={5}>
+      <Heading as="h1" size="2xl" color="#176572" mb={5}>
                     About Dora
                 </Heading>
         <Text>
@@ -53,7 +53,7 @@ const AboutUs = () => (
 
       {/* Third Row */}
       <Box>
-      <Heading as="h1" size="2xl" color="green.500" mb={5}>
+      <Heading as="h1" size="2xl" color="#176572" mb={5}>
                     About the Mortgage Professionals
                 </Heading>
         <Text>

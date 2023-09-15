@@ -15,7 +15,7 @@ const Renewing = () => {
 
             <Accordion defaultIndex={[0, 1, 2, 3]} allowMultiple>
                 <AccordionItem>
-                    <AccordionButton _expanded={{ bg: 'green', color: 'white' }}>
+                    <AccordionButton _expanded={{ bg: '#176572', color: 'white' }}>
                         <Box flex="1" textAlign="left">
                             <Heading size="md">Unlocking the Potential of Mortgage Renewal</Heading>
                         </Box>
@@ -31,7 +31,7 @@ const Renewing = () => {
                     </AccordionPanel>
                 </AccordionItem>
                 <AccordionItem>
-                    <AccordionButton _expanded={{ bg: 'green', color: 'white' }}>
+                    <AccordionButton _expanded={{ bg: '#176572', color: 'white' }}>
                         <Box flex="1" textAlign="left">
                             <Heading size="md">But can you trust the banks?</Heading>
                         </Box>
@@ -47,7 +47,7 @@ const Renewing = () => {
                     </AccordionPanel>
                 </AccordionItem>
                 <AccordionItem>
-                    <AccordionButton _expanded={{ bg: 'green', color: 'white' }}>
+                    <AccordionButton _expanded={{ bg: '#176572', color: 'white' }}>
                         <Box flex="1" textAlign="left">
                             <Heading size="md">Building a Strategy</Heading>
                         </Box>
@@ -60,7 +60,7 @@ const Renewing = () => {
                     </AccordionPanel>
                 </AccordionItem>
                 <AccordionItem>
-                    <AccordionButton _expanded={{ bg: 'green', color: 'white' }}>
+                    <AccordionButton _expanded={{ bg: '#176572', color: 'white' }}>
                         <Box flex="1" textAlign="left">
                             <Heading size="md">Tips and Tricks</Heading>
                         </Box>
