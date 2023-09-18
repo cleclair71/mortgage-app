@@ -100,7 +100,9 @@ Powered by <a href="https://www.gomaxsolutions.com/" style={{fontWeight: 'bold'}
 </Text>
 <Text fontSize="11">
 Website by <a href="https://www.linkedin.com/in/cassie-leclair-931093b6/" style={{fontWeight: 'bold'}}>Cassie LeClair</a>
+
 </Text>
+<Link fontSize="11" href={'/admin-signin'} style={{fontWeight: 'bold'}}>Admin</Link>
       <Stack direction={'row'} spacing={6}>
         <SocialButton label={'Twitter'} href={'#'}>
           <FaFacebook />
