@@ -15,7 +15,7 @@ const SignInPage = lazy(() => import('./components/auth/signin/App'));
 // const SignUpPage = lazy(() => import('./components/auth/SignUp'));
 const ApplicationPage = lazy(() => import('./components/application/App'));
 const SignUpPage = lazy(() => import('./components/auth/signup/App'));
-
+const AdminSignInPage = lazy(() => import('./components/auth/adminLogin/App'));
 
 // scroll to hash
 function useScrollToHash() {
@@ -54,6 +54,7 @@ function App() {
           <Route path="/Mortgages/*" element={LoadableComponent(MortgagePage)} />
           <Route path="/application-page" element={LoadableComponent(ApplicationPage)} />
           <Route path="/about-page" element={LoadableComponent(AboutPage)} />
+          <Route path="/admin-signin" element={LoadableComponent(AdminSignInPage)} />
         </Routes>
       </Box>
     </Router>
