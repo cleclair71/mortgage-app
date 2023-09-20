@@ -16,7 +16,11 @@ const SignInPage = lazy(() => import('./components/auth/signin/App'));
 const ApplicationPage = lazy(() => import('./components/application/App'));
 const SignUpPage = lazy(() => import('./components/auth/signup/App'));
 const AdminSignInPage = lazy(() => import('./components/auth/adminLogin/App'));
-
+const DashboardLayout = lazy(() => import('./views/dashboard/DashboardLayout'));
+const ManageClients = lazy(() => import('./views/manage-clients/App'));
+const ReferralPartners = lazy(() => import('./views/referral-partners/App'));
+const Communication = lazy(() => import('./views/communication/App'));
+const Dashboard = lazy(() => import('./views/dashboard/App'));
 // scroll to hash
 function useScrollToHash() {
   const { hash } = useLocation();
@@ -55,6 +59,14 @@ function App() {
           <Route path="/application-page" element={LoadableComponent(ApplicationPage)} />
           <Route path="/about-page" element={LoadableComponent(AboutPage)} />
           <Route path="/admin-signin" element={LoadableComponent(AdminSignInPage)} />
+
+          <Route path="/dashboard/*" element={LoadableComponent(DashboardLayout)}>
+            <Route index element={LoadableComponent(Dashboard)} />
+            <Route path="communication" element={LoadableComponent(Communication)} />
+           
+            <Route path="manage-clients" element={LoadableComponent(ManageClients)} />
+            <Route path="referral-partners" element={LoadableComponent(ReferralPartners)} />
+          </Route>
         </Routes>
       </Box>
     </Router>
