@@ -1,5 +1,5 @@
-'use client'
-
+import React, { useState } from 'react';
+import * as Yup from 'yup';
 import {
   Button,
   Checkbox,
@@ -11,44 +11,72 @@ import {
   Input,
   Stack,
   Image,
- 
-} from '@chakra-ui/react'
+  FormErrorMessage,
+} from '@chakra-ui/react';
 import { useNavigate } from "react-router-dom";
 import SpringButton from '../../../theme/SpringButon';
 
+const validationSchema = Yup.object().shape({
+  email: Yup.string().email('Invalid email address').required('Email is required'),
+  password: Yup.string().min(8, 'Password must be at least 8 characters').required('Password is required'),
+ 
+});
+
 export default function AdminSignIn() {
   const navigate = useNavigate();
-  return (
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+
+    try {
+      const values = { email, password };
+      await validationSchema.validate(values);
+      
+      // TODO: Add server-side authentication logic for admin
+      navigate('/admin-dashboard');  // Simulate successful login
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+ return (
     <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
       <Flex p={8} flex={1} align={'center'} justify={'center'}>
-        <Stack spacing={4} w={'full'} maxW={'md'}>
-          <Heading fontSize={'2xl'}>Sign in to your account</Heading>
-          <FormControl id="email">
-            <FormLabel>Email address</FormLabel>
-            <Input type="email" />
-          </FormControl>
-          <FormControl id="password">
-            <FormLabel>Password</FormLabel>
-            <Input type="password" />
-          </FormControl>
-          <Stack spacing={6}>
-            <Stack
-              direction={{ base: 'column', sm: 'row' }}
-              align={'start'}
-              justify={'space-between'}>
-              <Checkbox>Remember me</Checkbox>
-              <Text color={'blue.500'}>Forgot password?</Text>
+        <form onSubmit={handleSubmit}>
+          <Stack spacing={4} w={'full'} maxW={'md'}>
+            <Heading fontSize={'2xl'}>Admin Sign In</Heading>
+            <FormControl id="email" isInvalid={!!error}>
+          <FormLabel>Email address</FormLabel>
+          <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <FormErrorMessage>{error}</FormErrorMessage>
+        </FormControl>
+        <FormControl id="password" isInvalid={!!error}>
+          <FormLabel>Password</FormLabel>
+          <Input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <FormErrorMessage>{error}</FormErrorMessage>
+        </FormControl>
+            <Stack spacing={6}>
+              <Stack direction={{ base: 'column', sm: 'row' }} align={'start'} justify={'space-between'}>
+                <Checkbox>Remember me</Checkbox>
+                <Text color={'blue.500'}>Forgot password?</Text>
+              </Stack>
+              <SpringButton type="submit">
+                Sign in
+              </SpringButton>
+              <Text 
+                color={'blue.500'} 
+                onClick={() => navigate('/admin-sign-up')} 
+                cursor="pointer"
+              >
+                Don't have an admin account? Sign up
+              </Text>
             </Stack>
-            <SpringButton variant='solid'>
-              Sign in
-            </SpringButton>
-            <Text 
-  color={'blue.500'} 
-  onClick={() => navigate('/sign-up')} 
-  cursor="pointer"
->Don't have an account? Sign up</Text>
           </Stack>
-        </Stack>
+        </form>
       </Flex>
       <Flex flex={1}>
         <Image
@@ -60,5 +88,5 @@ export default function AdminSignIn() {
         />
       </Flex>
     </Stack>
-  )
+  );
 }
