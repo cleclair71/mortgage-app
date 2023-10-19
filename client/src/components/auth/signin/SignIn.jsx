@@ -11,26 +11,57 @@ import {
   Input,
   Stack,
   Image,
- 
+  useToast
 } from '@chakra-ui/react'
+
 import { useNavigate } from "react-router-dom";
 import SpringButton from '../../../theme/SpringButon';
+import { useState } from 'react';
+import axios from 'axios'
 
 export default function SignIn() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const toast = useToast();
+  const onSubmit = async (e) => {
+
+    e.preventDefault()
+      try {
+        const response = await axios.post("http://localhost:3001/auth/api/login", {
+          email, password
+        })
+        console.log(response)
+        // navigate("/")
+      } catch (err) {
+        console.error(err.response.data)
+        toast({
+          title: "Email or password not found",
+          description: err.response.data,
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+      });
+      }
+  }
+
   return (
     <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
       <Flex p={8} flex={1} align={'center'} justify={'center'}>
         <Stack spacing={4} w={'full'} maxW={'md'}>
           <Heading fontSize={'2xl'}>Sign in to your account</Heading>
+
+        <form onSubmit={onSubmit}> 
           <FormControl id="email">
             <FormLabel>Email address</FormLabel>
-            <Input type="email" />
+            <Input type="email" value={email} onChange={e => setEmail(e.target.value)}/>
           </FormControl>
+
           <FormControl id="password">
             <FormLabel>Password</FormLabel>
-            <Input type="password" />
+            <Input type="password" autoComplete="off" value={password} onChange={e => setPassword(e.target.value)}/>
           </FormControl>
+
           <Stack spacing={6}>
             <Stack
               direction={{ base: 'column', sm: 'row' }}
@@ -39,15 +70,16 @@ export default function SignIn() {
               <Checkbox>Remember me</Checkbox>
               <Text color={'blue.500'}>Forgot password?</Text>
             </Stack>
-            <SpringButton variant='solid'>
+            <SpringButton variant='solid' type="submit">
               Sign in
             </SpringButton>
             <Text 
-  color={'blue.500'} 
-  onClick={() => navigate('/sign-up')} 
-  cursor="pointer"
->Don't have an account? Sign up</Text>
+              color={'blue.500'} 
+              onClick={() => navigate('/sign-up')} 
+              cursor="pointer"
+            >Don't have an account? Sign up</Text>
           </Stack>
+        </form>
         </Stack>
       </Flex>
       <Flex flex={1}>

@@ -1,0 +1,7 @@
+NODE_ENV=development
+ACCESS_TOKEN_SECRET=your access token
+PG_USER=your postgresql user
+PG_PASSWORD=your postgresql password
+PG_HOST=localhost
+PG_PORT=5432 (this the default postgresql port)
+PG_DATABASE=your database
