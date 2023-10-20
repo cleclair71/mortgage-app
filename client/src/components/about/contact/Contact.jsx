@@ -1,10 +1,6 @@
 'use client'
 import { FiMapPin, FiPhone } from 'react-icons/fi';
 import { MdFax } from 'react-icons/md';
-
-
-
-
 import {
   Container,
   Flex,
@@ -23,6 +19,7 @@ import {
   InputGroup,
   InputLeftElement,
   Textarea,
+  useToast
 } from '@chakra-ui/react'
 import {
   MdPhone,
@@ -33,10 +30,53 @@ import {
 } from 'react-icons/md'
 import { BsGithub, BsDiscord, BsPerson } from 'react-icons/bs'
 import SpringButton from '../../../theme/SpringButon';
+import { useState } from 'react';
+import axios from 'axios';
 
 export default function Contact() {
-  return (
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
+  const toast = useToast();
+  const onSubmit = async(e) => {
+    e.preventDefault()
 
+    if (name === "" | email === "" | message === "") {
+      toast({
+        title: "Empty Fields!",
+        description: "Please fill out all fields.",
+        status: "warning",
+        duration: 5000,
+        isClosable: true,
+      });
+
+      return;
+    }
+
+    try {
+      const response = await axios.post("http://localhost:3001/api/send-mail", {
+        name, email, message
+    })
+
+    setName("")
+    setEmail("")
+    setMessage("")
+
+    toast({
+      title: "Success!",
+      description: "Thank you for your message. We'll get back to you as soon as possible",
+      status: "success",
+      toastPosition: "top",
+      duration: 5000,
+      isClosable: true,
+    });
+
+    } catch (err) {
+      console.log(err.message)
+    }
+  }
+
+  return (
     <Flex>
       <Box
         bg="
@@ -126,25 +166,27 @@ export default function Contact() {
               <Box bg="white" borderRadius="lg">
                 <Box m={8} color="#0B0E3F">
                   <VStack spacing={5}>
+
+                  <form onSubmit={onSubmit}>
                     <FormControl id="name">
                       <FormLabel>Your Name</FormLabel>
                       <InputGroup borderColor="#E0E1E7">
                         <InputLeftElement pointerEvents="none">
                           <BsPerson color="gray.800" />
                         </InputLeftElement>
-                        <Input type="text" size="md" />
+                        <Input type="text" size="md" value={name} onChange={e => setName(e.target.value)}/>
                       </InputGroup>
                     </FormControl>
-                    <FormControl id="name">
+                    <FormControl id="email">
                       <FormLabel>Mail</FormLabel>
                       <InputGroup borderColor="#E0E1E7">
                         <InputLeftElement pointerEvents="none">
                           <MdOutlineEmail color="gray.800" />
                         </InputLeftElement>
-                        <Input type="text" size="md" />
+                        <Input type="text" size="md" value={email} onChange={e => setEmail(e.target.value)} />
                       </InputGroup>
                     </FormControl>
-                    <FormControl id="name">
+                    <FormControl id="message">
                       <FormLabel>Message</FormLabel>
                       <Textarea
                         borderColor="gray.300"
@@ -152,13 +194,16 @@ export default function Contact() {
                           borderRadius: 'gray.300',
                         }}
                         placeholder="message"
+                        value={message} onChange={e => setMessage(e.target.value)}
                       />
                     </FormControl>
                     <FormControl id="name" float="right">
-                      <SpringButton variant="solid" bg="#50703e" color="white" _hover={{}}>
+                      <SpringButton type="submit" variant="solid" bg="#50703e" color="white" _hover={{}}>
                         Send Message
                       </SpringButton>
                     </FormControl>
+                  </form>
+
                   </VStack>
                 </Box>
               </Box>

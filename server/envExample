@@ -5,3 +5,7 @@ PG_PASSWORD=your postgresql password
 PG_HOST=localhost
 PG_PORT=5432 (this the default postgresql port)
 PG_DATABASE=your database
+BEEHIIV_API_KEY= ask me for this
+PUBLIC_ID= ask me for this
+EMAIL= ask me for this
+EMAIL_PASS= ask me for this

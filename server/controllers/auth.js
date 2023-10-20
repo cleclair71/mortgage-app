@@ -58,10 +58,19 @@ export const login = async (req, res) => {
         return res.status(401).json("Invalid Credentials");
       }
 
-      const token = jwt.sign({id: user.rows[0].user_id}, process.env.ACCESS_TOKEN_SECRET)
-      res.cookie("accessToken", token, {
+      const accessToken = jwt.sign({id: user.rows[0].user_id}, process.env.ACCESS_TOKEN_SECRET)
+
+      const refreshToken = jwt.sign({ userId: user.rows[0].user_id }, process.env.REFRESH_TOKEN_SECRET);
+
+      res.cookie("accessToken", accessToken, {
       httpOnly: true,
+      maxAge: 15 * 60 * 1000, // 15 minutes
      })
+
+     res.cookie('refreshToken', refreshToken, {
+      httpOnly: true,
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+    });
 
       return res.json(user.rows[0].user_email);
     } catch (err) {
@@ -97,4 +106,28 @@ export const newsletterSignup = async(req, res) => {
       console.error(err.message);
       res.status(500).send(err.message)
   }
+}
+
+
+// Refreshing access tokens (not implemented on frontend yet)
+// Will need to make a function in front end to check if access token is expired or near expiry, which will call this to refresh the accesstoken
+export const refresh = async(req, res) => {
+  const refreshToken = req.cookies.refreshToken;
+
+  if (!refreshToken) {
+    return res.sendStatus(401); // Unauthorized
+  }
+
+  jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
+    if (err) {
+      return res.sendStatus(403); // Forbidden (invalid or expired token)
+    }
+
+    
+    const accessToken = jwt.sign({ id: user.userId }, process.env.ACCESS_TOKEN_SECRET, {
+      expiresIn: '15m', // 15 minutes
+    });
+
+    res.json({ accessToken });
+  });
 }
