@@ -32,7 +32,7 @@ const Newsletter = () => {
         if (isValidForm) {
 
             try {
-                const response = await axios.post("http://localhost:3001/auth/api/newsletter", formData)
+                const response = await axios.post("http://localhost:3001/api/auth/newsletter", formData)
                 console.log(response)
               } catch (err) {
                 console.error(err.message)

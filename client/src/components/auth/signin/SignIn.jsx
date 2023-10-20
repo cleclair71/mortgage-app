@@ -28,7 +28,7 @@ export default function SignIn() {
 
     e.preventDefault()
       try {
-        const response = await axios.post("http://localhost:3001/auth/api/login", {
+        const response = await axios.post("http://localhost:3001/api/auth/login", {
           email, password
         })
         console.log(response)

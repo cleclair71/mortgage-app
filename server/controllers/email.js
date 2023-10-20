@@ -19,7 +19,7 @@ export const subscribe = async(req, res) => {
           email: req.body.email,
           reactivate_existing: false,
           send_welcome_email: true,
-          utm_source: 'Signed up',
+          utm_source: 'registration from website',
           utm_campaign: 'Main Mortgage',
           utm_medium: 'organic',
           referring_site: 'insert mortgage site url',

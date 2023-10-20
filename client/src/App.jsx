@@ -21,6 +21,7 @@ const ManageClients = lazy(() => import('./views/manage-clients/App'));
 const ReferralPartners = lazy(() => import('./views/referral-partners/App'));
 const Communication = lazy(() => import('./views/communication/App'));
 const Dashboard = lazy(() => import('./views/dashboard/App'));
+const TestPage = lazy(() => import('./components/Main/TestApp'))
 // scroll to hash
 function useScrollToHash() {
   const { hash } = useLocation();
@@ -59,6 +60,8 @@ function App() {
           <Route path="/application-page" element={LoadableComponent(ApplicationPage)} />
           <Route path="/about-page" element={LoadableComponent(AboutPage)} />
           <Route path="/admin-signin" element={LoadableComponent(AdminSignInPage)} />
+
+          <Route path="/test" element={LoadableComponent(TestPage)} />
 
           <Route path="/dashboard/*" element={LoadableComponent(DashboardLayout)}>
             <Route index element={LoadableComponent(Dashboard)} />
