@@ -8,8 +8,10 @@ const PORT = process.env.PORT || 3001;
 
 
 app.use(express.json());
-app.use(cors())
+app.use(cors({ origin: true, credentials: true }))
 app.use(cookieParser())
+app.use(express.urlencoded({extended: false}))
+
 app.use("/", router)
 
 // Serve up static assets

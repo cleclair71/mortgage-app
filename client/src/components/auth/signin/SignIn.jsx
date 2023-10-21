@@ -30,7 +30,7 @@ export default function SignIn() {
       try {
         const response = await axios.post("http://localhost:3001/api/auth/login", {
           email, password
-        })
+        }, {withCredentials: true, credentials: 'include'})
         console.log(response)
         // navigate("/")
       } catch (err) {
@@ -43,6 +43,15 @@ export default function SignIn() {
           isClosable: true,
       });
       }
+  }
+
+  const signout = async() => {
+    try {
+      await axios.post("http://localhost:3001/api/auth/logout", {}, {withCredentials: true, credentials: 'include'})
+    } catch (err) {
+      console.error(err.response.data)
+      
+    };
   }
 
   return (
@@ -80,6 +89,10 @@ export default function SignIn() {
             >Don't have an account? Sign up</Text>
           </Stack>
         </form>
+
+        <SpringButton variant='solid' onClick={signout}>
+              SIGN OUT
+            </SpringButton>
         </Stack>
       </Flex>
       <Flex flex={1}>

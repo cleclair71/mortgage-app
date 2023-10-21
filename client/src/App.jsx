@@ -1,6 +1,7 @@
 import { Box, Spinner, Center } from "@chakra-ui/react";
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import { Suspense, useEffect, lazy } from "react";
+import { AuthProvider } from "./context/AuthContext";
 
 const AboutPage = lazy(() => import('./components/about/aboutUs/App'));
 const MainPage = lazy(() => import('./components/Main/App'));
@@ -45,9 +46,11 @@ function LoadableComponent(Component) {
 
 function App() {
   return (
+    <AuthProvider>
     <Router>
       <ScrollToHash />
       <Box>
+      
         <Routes>
           <Route path="/" element={LoadableComponent(MainPage)} />
           <Route path="/contact-page" element={LoadableComponent(ContactPage)} />
@@ -61,7 +64,9 @@ function App() {
           <Route path="/about-page" element={LoadableComponent(AboutPage)} />
           <Route path="/admin-signin" element={LoadableComponent(AdminSignInPage)} />
 
+         
           <Route path="/test" element={LoadableComponent(TestPage)} />
+         
 
           <Route path="/dashboard/*" element={LoadableComponent(DashboardLayout)}>
             <Route index element={LoadableComponent(Dashboard)} />
@@ -71,8 +76,10 @@ function App() {
             <Route path="referral-partners" element={LoadableComponent(ReferralPartners)} />
           </Route>
         </Routes>
+     
       </Box>
     </Router>
+    </AuthProvider>
   );
 }
 

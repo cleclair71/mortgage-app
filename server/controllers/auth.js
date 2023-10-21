@@ -58,16 +58,18 @@ export const login = async (req, res) => {
         return res.status(401).json("Invalid Credentials");
       }
 
-      const accessToken = jwt.sign({id: user.rows[0].user_id}, process.env.ACCESS_TOKEN_SECRET)
+      const accessToken = jwt.sign({id: user.rows[0].user_id, email}, process.env.ACCESS_TOKEN_SECRET, {
+        expiresIn:'15m'
+      })
 
-      const refreshToken = jwt.sign({ userId: user.rows[0].user_id }, process.env.REFRESH_TOKEN_SECRET);
+      const refreshToken = jwt.sign({ userId: user.rows[0].user_id, email}, process.env.REFRESH_TOKEN_SECRET);
 
-      res.cookie("accessToken", accessToken, {
+      res.cookie("access-token", accessToken, {
       httpOnly: true,
       maxAge: 15 * 60 * 1000, // 15 minutes
      })
 
-     res.cookie('refreshToken', refreshToken, {
+     res.cookie("refresh-token", refreshToken, {
       httpOnly: true,
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
     });
@@ -80,10 +82,12 @@ export const login = async (req, res) => {
 }
 
 export const logout = async(req, res) => {
-  res.clearCookie("accessToken",{
-    secure:true,
-    sameSite:"none"
-  }).status(200).json("User has been logged out.")
+  res
+  .clearCookie("access-token")
+  .clearCookie("refresh-token")
+  .status(200)
+  .json("User has been logged out.");
+
 }
 
 
@@ -130,4 +134,20 @@ export const refresh = async(req, res) => {
 
     res.json({ accessToken });
   });
+}
+
+export const getProfile = async (req, res) => {
+  const accessToken = req.cookies["access-token"]
+
+  if (accessToken) {
+    jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET, {}, (err, user) => {
+      if (err) {
+        console.error("JWT Verification Error:", err);
+        return res.status(401).json("Invalid Token");
+      }
+      res.json(user);
+    });
+  } else {
+    res.status(401).json("Token not found")
+  }
 }
