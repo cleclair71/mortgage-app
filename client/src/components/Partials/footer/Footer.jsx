@@ -54,7 +54,7 @@ export default function LargeWithAppLinksAndSocial() {
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
           <Stack align={'flex-start'}>
             <ListHeader>Main Mortgage</ListHeader>
-            <Link href={'#'}>About Us</Link>
+            <Link href={'/about-page'}>About Us</Link>
             <Link href={'/contact-page'}>Contact Us</Link>
             <Link href={'#'}>Why Choose a Mortgage Agent</Link>
           </Stack>
