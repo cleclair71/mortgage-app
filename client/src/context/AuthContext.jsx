@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/api/profile', {withCredentials: true, credentials: 'include'});
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND}/api/profile`, {withCredentials: true, credentials: 'include'});
         console.log(response)
     
           const userData = response.data

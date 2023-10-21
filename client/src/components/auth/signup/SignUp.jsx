@@ -27,13 +27,13 @@ export default function SignUp() {
     if (password === confirmPassword) {
       
       try {
-        const response = await axios.post("http://localhost:3001/api/auth/register", {
+        const response = await axios.post(`${process.env.REACT_APP_BACKEND}/api/auth/register`, {
           email, password
         })
 
         // **incorporate first name and last name to request body later
         // This post request is to sign the user up for the newsletter as well
-        const res = await axios.post("http://localhost:3001/api/subscribe", {
+        const res = await axios.post(`${process.env.REACT_APP_BACKEND}/api/subscribe`, {
           email
         })
         // navigate("/")

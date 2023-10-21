@@ -28,7 +28,7 @@ export default function SignIn() {
 
     e.preventDefault()
       try {
-        const response = await axios.post("http://localhost:3001/api/auth/login", {
+        const response = await axios.post(`${process.env.REACT_APP_BACKEND}/api/auth/login`, {
           email, password
         }, {withCredentials: true, credentials: 'include'})
         console.log(response)
@@ -47,7 +47,7 @@ export default function SignIn() {
 
   const signout = async() => {
     try {
-      await axios.post("http://localhost:3001/api/auth/logout", {}, {withCredentials: true, credentials: 'include'})
+      await axios.post(`${process.env.REACT_APP_BACKEND}/api/auth/logout`, {}, {withCredentials: true, credentials: 'include'})
     } catch (err) {
       console.error(err.response.data)
       

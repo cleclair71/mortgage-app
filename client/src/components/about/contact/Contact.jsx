@@ -33,14 +33,16 @@ import SpringButton from '../../../theme/SpringButon';
 import { useState } from 'react';
 import axios from 'axios';
 
+
 export default function Contact() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
   const toast = useToast();
+
   const onSubmit = async(e) => {
     e.preventDefault()
-
+   
     if (name === "" | email === "" | message === "") {
       toast({
         title: "Empty Fields!",
@@ -54,7 +56,7 @@ export default function Contact() {
     }
 
     try {
-      const response = await axios.post("http://localhost:3001/api/send-mail", {
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND}/api/send-mail`, {
         name, email, message
     })
 
