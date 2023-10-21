@@ -32,7 +32,14 @@ export default function SignIn() {
           email, password
         }, {withCredentials: true, credentials: 'include'})
         console.log(response)
-        // navigate("/")
+        toast({
+          title: "Signed in!",
+          description: "Redirection page to be implemented later",
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+      });
+      
       } catch (err) {
         console.error(err.response.data)
         toast({
@@ -48,6 +55,13 @@ export default function SignIn() {
   const signout = async() => {
     try {
       await axios.post(`${process.env.REACT_APP_BACKEND}/api/auth/logout`, {}, {withCredentials: true, credentials: 'include'})
+      toast({
+        title: "COOKIES SHOULD BE REMOVED FROM STORAGE NOW",
+        description: "",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+    });
     } catch (err) {
       console.error(err.response.data)
       

@@ -9,7 +9,8 @@ import {
   Input,
   Stack,
   Image,
-  FormErrorMessage
+  FormErrorMessage,
+  useToast
 } from '@chakra-ui/react';
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -21,7 +22,7 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-
+  const toast = useToast();
   const onSubmit = async (e) => {
     e.preventDefault()
     if (password === confirmPassword) {
@@ -37,10 +38,24 @@ export default function SignUp() {
           email
         })
         // navigate("/")
-  
+        toast({
+          title: "ACCOUNT CREATED AND ADDED TO NEWSLETTER",
+          description: "",
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+      });
       } catch (err) {
         console.error(err.message)
       }
+    } else {
+      toast({
+        title: "Passwords must match!",
+        description: "",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+    });
     }
   }
 
