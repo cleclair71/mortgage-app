@@ -67,11 +67,15 @@ export const login = async (req, res) => {
       res.cookie("access-token", accessToken, {
       httpOnly: true,
       maxAge: 15 * 60 * 1000, // 15 minutes
+      sameSite: 'none',
+      secure: true,
      })
 
      res.cookie("refresh-token", refreshToken, {
       httpOnly: true,
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+      sameSite: 'none',
+      secure: true,
     });
 
       return res.json(user.rows[0].user_email);
