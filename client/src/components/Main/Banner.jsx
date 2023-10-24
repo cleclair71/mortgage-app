@@ -17,7 +17,7 @@ const BannerContent = () => {
       </Image>
      
       {/* <Divider w="5%" m="center" borderColor="custom.text" mt="30px" mb="30px" /> */}
-      <SpringButton variant="outline" onClick={() => console.log("Button 2 clicked!")}>Contact</SpringButton>
+      <Link to="/contact-page"><SpringButton variant="outline" onClick={() => console.log("Button 1 clicked!")}>Contact</SpringButton></Link>
       </Box>
     </MotionVStack>
   );

@@ -1,6 +1,7 @@
 import { Box, Spinner, Center } from "@chakra-ui/react";
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import { Suspense, useEffect, lazy } from "react";
+import { AuthProvider } from "./context/AuthContext";
 
 const AboutPage = lazy(() => import('./components/about/aboutUs/App'));
 const MainPage = lazy(() => import('./components/Main/App'));
@@ -21,6 +22,7 @@ const ManageClients = lazy(() => import('./views/manage-clients/App'));
 const ReferralPartners = lazy(() => import('./views/referral-partners/App'));
 const Communication = lazy(() => import('./views/communication/App'));
 const Dashboard = lazy(() => import('./views/dashboard/App'));
+const TestPage = lazy(() => import('./components/Main/TestApp'))
 // scroll to hash
 function useScrollToHash() {
   const { hash } = useLocation();
@@ -44,9 +46,11 @@ function LoadableComponent(Component) {
 
 function App() {
   return (
+    <AuthProvider>
     <Router>
       <ScrollToHash />
       <Box>
+      
         <Routes>
           <Route path="/" element={LoadableComponent(MainPage)} />
           <Route path="/contact-page" element={LoadableComponent(ContactPage)} />
@@ -60,6 +64,10 @@ function App() {
           <Route path="/about-page" element={LoadableComponent(AboutPage)} />
           <Route path="/admin-signin" element={LoadableComponent(AdminSignInPage)} />
 
+         
+          <Route path="/test" element={LoadableComponent(TestPage)} />
+         
+
           <Route path="/dashboard/*" element={LoadableComponent(DashboardLayout)}>
             <Route index element={LoadableComponent(Dashboard)} />
             <Route path="communication" element={LoadableComponent(Communication)} />
@@ -68,8 +76,10 @@ function App() {
             <Route path="referral-partners" element={LoadableComponent(ReferralPartners)} />
           </Route>
         </Routes>
+     
       </Box>
     </Router>
+    </AuthProvider>
   );
 }
 

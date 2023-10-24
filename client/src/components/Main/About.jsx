@@ -1,7 +1,7 @@
 
 
 import React from 'react';
-import { Box, Flex, Heading, HStack, Image, Text, useColorModeValue, Divider } from "@chakra-ui/react";
+import { Box, Flex, Heading, HStack, Image, Text, useColorModeValue, Divider, Link } from "@chakra-ui/react";
 import { motion } from 'framer-motion';
 import { TfiFacebook, TfiLinkedin } from 'react-icons/tfi';
 import AboutImage from '../../assets/homeF.jpg';
@@ -53,7 +53,7 @@ const About = () => {
           <Text fontSize="1.1rem" color={useColorModeValue("custom.text", "white")} mb="2rem">
             Dora is a passionate and dedicated software developer...
           </Text>
-          <SpringButton variant="outline" onClick={() => console.log("Button 2 clicked!")}>Contact</SpringButton>
+          <a href="/contact-page"><SpringButton variant="outline" onClick={() => console.log("Button 2 clicked!")}>Contact</SpringButton></a>
           <HStack mt="1rem" width="60px">
             <TfiFacebook size={40} color={useColorModeValue("custom.text", "white")} />
             <TfiLinkedin size={40} color={useColorModeValue("custom.text", "white")} />

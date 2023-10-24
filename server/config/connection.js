@@ -1,14 +1,25 @@
-const mongoose = require("mongoose");
+import pg from 'pg';
+import dotenv from 'dotenv';
+dotenv.config();
 
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/mortgage-app",
-  {
-    useFindAndModify: false,
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+const { Pool } = pg;
 
-mongoose.set("debug", true);
+let config;
 
-module.exports = mongoose.connection;
+if (process.env.NODE_ENV === 'production') {
+  config = {
+    connectionString: process.env.PG_RENDER_CONNECTION_STRING,
+  };
+} else {
+  config = {
+    user: process.env.PG_USER,
+    password: process.env.PG_PASSWORD,
+    host: process.env.PG_HOST,
+    port: process.env.PG_PORT,
+    database: process.env.PG_DATABASE,
+  };
+}
+
+const pool = new Pool(config);
+
+export default pool;

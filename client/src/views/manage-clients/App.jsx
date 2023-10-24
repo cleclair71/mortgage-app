@@ -3,7 +3,7 @@ import {
   Box, Heading, Table, Thead, Tbody, Tr, Th, Td, Text, VStack, Link, IconButton, Input, InputGroup, InputLeftElement, Button, Avatar
 } from '@chakra-ui/react';
 import { FaPlus, FaSearch } from 'react-icons/fa';
-import { generate } from 'shortid';
+// import { generate } from 'shortid';
 
 const ManageClients = () => {
   // Sample clients data
