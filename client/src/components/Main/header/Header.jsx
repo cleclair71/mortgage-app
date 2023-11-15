@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Box,
   Flex,
@@ -17,7 +17,7 @@ import {
   useToast
 } from '@chakra-ui/react';
 import { ChevronDownIcon, HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import SpringButton from '../../../theme/SpringButon';
 import LogoImage from '../../../assets/1.png';
 import { useAuth } from '../../../context/AuthContext';
@@ -25,24 +25,33 @@ import axios from 'axios';
 
 export default function Header() {
   const toast = useToast();
-  const { user } = useAuth()
+  const { user, setUser } = useAuth();
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const navigate = useNavigate();
+  
   const signout = async() => {
     try {
       await axios.post(`${process.env.REACT_APP_BACKEND}/api/auth/logout`, {}, {withCredentials: true, credentials: 'include'})
       toast({
-        title: "COOKIES SHOULD BE REMOVED FROM STORAGE NOW",
+        title: "Signed out successfully.",
         description: "",
         status: "success",
         duration: 5000,
         isClosable: true,
     });
+    setUser(null);
+    navigate('/');
     } catch (err) {
       console.error(err.response.data)
       
     };
   }
+
+  useEffect(() => {
+    
+    console.log('User state:', user);
+
+  }, [user]);
 
   return (
     <Box bg="transparent" px={8}>

@@ -18,12 +18,15 @@ import { useNavigate } from "react-router-dom";
 import SpringButton from '../../../theme/SpringButon';
 import { useState } from 'react';
 import axios from 'axios'
+import { useAuth } from '../../../context/AuthContext'
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const toast = useToast();
+  const { refreshUserData } = useAuth();
+
   const onSubmit = async (e) => {
 
     e.preventDefault()
@@ -31,9 +34,11 @@ export default function SignIn() {
         const response = await axios.post(`${process.env.REACT_APP_BACKEND}/api/auth/login`, {
           email, password
         }, {withCredentials: true, credentials: 'include'})
-
-        navigate("/")
         
+        // refresh user data so when page renders to "/", user state will be updated as well
+        await refreshUserData();
+        navigate("/")
+
         toast({
           title: "Welcome!",
           description: "Successfully Signed in",
