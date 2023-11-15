@@ -13,17 +13,37 @@ import {
   useDisclosure,
   useColorModeValue,
   Stack,
-  Image
-
+  Image,
+  useToast
 } from '@chakra-ui/react';
 import { ChevronDownIcon, HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { Link as RouterLink } from 'react-router-dom';
 import SpringButton from '../../../theme/SpringButon';
 import LogoImage from '../../../assets/1.png';
+import { useAuth } from '../../../context/AuthContext';
+import axios from 'axios';
 
 export default function Header() {
+  const toast = useToast();
+  const { user } = useAuth()
   const { isOpen, onOpen, onClose } = useDisclosure();
-  // const history = useHistory();
+
+  const signout = async() => {
+    try {
+      await axios.post(`${process.env.REACT_APP_BACKEND}/api/auth/logout`, {}, {withCredentials: true, credentials: 'include'})
+      toast({
+        title: "COOKIES SHOULD BE REMOVED FROM STORAGE NOW",
+        description: "",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+    });
+    } catch (err) {
+      console.error(err.response.data)
+      
+    };
+  }
+
   return (
     <Box bg="transparent" px={8}>
       <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
@@ -69,6 +89,8 @@ export default function Header() {
             ]} />
           </HStack>
         </HStack>
+        {user ? <SpringButton onClick={signout} variant='outline' size={'sm'} mt="1.5rem">Sign Out</SpringButton> : null}
+        
         <SpringButton as={RouterLink} to="/sign-in" variant='outline' size={'sm'} mt="1.5rem">Apply Now</SpringButton>
       </Flex>
       {isOpen ? (

@@ -23,6 +23,7 @@ export default function SignUp() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const toast = useToast();
+ 
   const onSubmit = async (e) => {
     e.preventDefault()
     if (password === confirmPassword) {
@@ -34,19 +35,34 @@ export default function SignUp() {
 
         // **incorporate first name and last name to request body later
         // This post request is to sign the user up for the newsletter as well
-        const res = await axios.post(`${process.env.REACT_APP_BACKEND}/api/subscribe`, {
-          email
-        })
-        // navigate("/")
+
+        // API KEY GOT DISABLED, NEED NEW ONE. WILL DO LATER
+        // const res = await axios.post(`${process.env.REACT_APP_BACKEND}/api/subscribe`, {
+        //   email
+        // })
+       
+        navigate(`/sign-in`)
+
         toast({
-          title: "ACCOUNT CREATED AND ADDED TO NEWSLETTER",
+          title: "Account Created! Please Sign In",
           description: "",
-          status: "error",
+          status: "success",
           duration: 5000,
           isClosable: true,
       });
+
+      
       } catch (err) {
-        console.error(err.message)
+        console.error(err.response.data)
+        if(err.response.data === "Email already exists") {
+          toast({
+            title: "Email already exists!",
+            description: "",
+            status: "error",
+            duration: 5000,
+            isClosable: true,
+        });
+        }
       }
     } else {
       toast({
