@@ -9,7 +9,7 @@ export const register = async(req, res) => {
     try {
         
         const { email, password } = req.body;
-        
+        console.log(email, password)
         const user = await pool.query("SELECT * FROM users WHERE user_email = $1", [
             email
           ]);

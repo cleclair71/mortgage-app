@@ -18,12 +18,15 @@ import { useNavigate } from "react-router-dom";
 import SpringButton from '../../../theme/SpringButon';
 import { useState } from 'react';
 import axios from 'axios'
+import { useAuth } from '../../../context/AuthContext'
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const toast = useToast();
+  const { refreshUserData } = useAuth();
+
   const onSubmit = async (e) => {
 
     e.preventDefault()
@@ -31,10 +34,14 @@ export default function SignIn() {
         const response = await axios.post(`${process.env.REACT_APP_BACKEND}/api/auth/login`, {
           email, password
         }, {withCredentials: true, credentials: 'include'})
-        console.log(response)
+        
+        // refresh user data so when page renders to "/", user state will be updated as well
+        await refreshUserData();
+        navigate("/")
+
         toast({
-          title: "Signed in!",
-          description: "Redirection page to be implemented later",
+          title: "Welcome!",
+          description: "Successfully Signed in",
           status: "success",
           duration: 5000,
           isClosable: true,
@@ -50,22 +57,6 @@ export default function SignIn() {
           isClosable: true,
       });
       }
-  }
-
-  const signout = async() => {
-    try {
-      await axios.post(`${process.env.REACT_APP_BACKEND}/api/auth/logout`, {}, {withCredentials: true, credentials: 'include'})
-      toast({
-        title: "COOKIES SHOULD BE REMOVED FROM STORAGE NOW",
-        description: "",
-        status: "success",
-        duration: 5000,
-        isClosable: true,
-    });
-    } catch (err) {
-      console.error(err.response.data)
-      
-    };
   }
 
   return (
@@ -104,9 +95,6 @@ export default function SignIn() {
           </Stack>
         </form>
 
-        <SpringButton variant='solid' onClick={signout}>
-              SIGN OUT
-            </SpringButton>
         </Stack>
       </Flex>
       <Flex flex={1}>
